@@ -22,14 +22,18 @@
         </div>
 
         <div class="status-row">
-          <div class="status-chip">
+          <button id="view-all-button" class="status-chip view-button is-active" type="button">
+            <span class="status-label">View</span>
+            <strong>All Profiles</strong>
+          </button>
+          <button id="view-saved-button" class="status-chip view-button" type="button">
             <span class="status-label">Saved</span>
             <strong id="saved-count">0</strong>
-          </div>
-          <div class="status-chip">
-            <span class="status-label">Ignored</span>
+          </button>
+          <button id="view-ignored-button" class="status-chip view-button" type="button">
+            <span class="status-label">Skip</span>
             <strong id="ignored-count">0</strong>
-          </div>
+          </button>
           <button id="reset-button" class="ghost-button" type="button">
             Reset
           </button>
@@ -39,6 +43,7 @@
       <section class="deck-panel">
         <div class="deck-frame">
           <div id="card-deck" class="card-deck" aria-live="polite"></div>
+          <div id="collection-view" class="collection-view" hidden></div>
 
           <div class="action-row">
             <button
@@ -55,7 +60,7 @@
               class="action-button action-ignore"
               type="button"
             >
-              Ignore
+              Skip
             </button>
             <button
               id="save-button"
@@ -71,7 +76,7 @@
 
     <template id="profile-card-template">
       <article class="profile-card">
-        <div class="swipe-indicator swipe-indicator-left">Ignore</div>
+        <div class="swipe-indicator swipe-indicator-left">Skip</div>
         <div class="swipe-indicator swipe-indicator-right">Save</div>
         <img class="profile-image" alt="" />
         <div class="card-gradient"></div>
@@ -80,15 +85,16 @@
             <div class="identity-row">
               <div>
                 <h2 class="profile-name"></h2>
-                <p class="profile-school"></p>
+                <div class="meta-row">
+                  <p class="profile-school"></p>
+                  <a
+                    class="profile-instagram"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  ></a>
+                </div>
               </div>
             </div>
-
-            <a
-              class="profile-instagram"
-              target="_blank"
-              rel="noreferrer noopener"
-            ></a>
           </div>
 
           <div class="card-bottom">
@@ -113,6 +119,46 @@
 
             <p class="profile-bio"></p>
             <blockquote class="profile-quote"></blockquote>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <template id="collection-card-template">
+      <article class="collection-card">
+        <div class="collection-image-wrap">
+          <img class="collection-image" alt="" />
+        </div>
+        <div class="collection-body">
+          <div class="collection-head">
+            <div>
+              <h2 class="profile-name"></h2>
+              <p class="profile-school"></p>
+            </div>
+            <a class="profile-instagram" target="_blank" rel="noreferrer noopener"></a>
+          </div>
+          <div class="detail-grid">
+            <div class="detail-pill major-wrapper">
+              <span class="detail-label">Major</span>
+              <span class="profile-major"></span>
+            </div>
+            <div class="detail-pill minor-wrapper">
+              <span class="detail-label">Minor</span>
+              <span class="profile-minor"></span>
+            </div>
+            <div class="detail-pill orientation-wrapper">
+              <span class="detail-label">Orientation</span>
+              <span class="profile-orientation"></span>
+            </div>
+            <div class="detail-pill zodiac-wrapper">
+              <span class="detail-label">Star Sign</span>
+              <span class="profile-zodiac"></span>
+            </div>
+          </div>
+          <p class="profile-bio"></p>
+          <blockquote class="profile-quote"></blockquote>
+          <div class="collection-actions">
+            <button class="collection-move-button" type="button"></button>
           </div>
         </div>
       </article>

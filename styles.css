@@ -104,6 +104,23 @@ h1 {
   min-width: 102px;
 }
 
+.view-button {
+  cursor: pointer;
+  text-align: left;
+  color: var(--text);
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.view-button:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.view-button.is-active {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(122, 83, 52, 0.28);
+}
+
 .status-label {
   display: block;
   font-size: 0.78rem;
@@ -134,6 +151,18 @@ h1 {
   min-height: 540px;
 }
 
+.collection-view {
+  width: min(100%, 420px);
+  height: min(72vh, 680px);
+  min-height: 540px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.collection-view[hidden] {
+  display: none;
+}
+
 .profile-card {
   position: absolute;
   inset: 0;
@@ -145,6 +174,71 @@ h1 {
   user-select: none;
   transform-origin: center bottom;
   transition: transform 220ms ease, opacity 220ms ease;
+}
+
+.collection-card {
+  overflow: hidden;
+  border-radius: 26px;
+  background: rgba(51, 28, 14, 0.88);
+  box-shadow: 0 16px 40px rgba(49, 20, 3, 0.18);
+  color: #fff9f2;
+}
+
+.collection-card + .collection-card {
+  margin-top: 16px;
+}
+
+.collection-image-wrap {
+  height: 280px;
+  background: #000;
+}
+
+.collection-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collection-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px;
+}
+
+.collection-head {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.collection-actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.collection-move-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+.collection-move-button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.collection-move-button.to-save {
+  background: linear-gradient(135deg, #19916e, var(--save));
+}
+
+.collection-move-button.to-skip {
+  background: linear-gradient(135deg, #b63838, var(--ignore));
 }
 
 .profile-card.is-next {
@@ -170,6 +264,10 @@ h1 {
 }
 
 .profile-image.is-hidden {
+  display: none;
+}
+
+.collection-image.is-hidden {
   display: none;
 }
 
@@ -208,6 +306,14 @@ h1 {
   gap: 16px;
 }
 
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
 .profile-name {
   margin: 0;
   font-family: "Fraunces", serif;
@@ -224,6 +330,17 @@ h1 {
 .profile-school,
 .profile-instagram {
   color: rgba(255, 249, 242, 0.82);
+}
+
+.profile-school {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(18, 14, 10, 0.56), rgba(18, 14, 10, 0.24));
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
 .profile-instagram {
@@ -316,6 +433,10 @@ h1 {
   margin-top: 18px;
 }
 
+.action-row[hidden] {
+  display: none;
+}
+
 .action-button {
   min-width: 140px;
   border: 0;
@@ -377,6 +498,12 @@ h1 {
   }
 
   .card-deck {
+    width: 100%;
+    height: min(68vh, 620px);
+    min-height: 500px;
+  }
+
+  .collection-view {
     width: 100%;
     height: min(68vh, 620px);
     min-height: 500px;

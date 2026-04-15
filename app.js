@@ -3,17 +3,24 @@ const SWIPE_THRESHOLD = 110;
 const STORAGE_KEY = "campus-match-decisions";
 
 const deck = document.getElementById("card-deck");
+const collectionView = document.getElementById("collection-view");
 const template = document.getElementById("profile-card-template");
+const collectionTemplate = document.getElementById("collection-card-template");
 const saveButton = document.getElementById("save-button");
 const ignoreButton = document.getElementById("ignore-button");
 const rewindButton = document.getElementById("rewind-button");
 const resetButton = document.getElementById("reset-button");
 const savedCount = document.getElementById("saved-count");
 const ignoredCount = document.getElementById("ignored-count");
+const viewAllButton = document.getElementById("view-all-button");
+const viewSavedButton = document.getElementById("view-saved-button");
+const viewIgnoredButton = document.getElementById("view-ignored-button");
+const actionRow = document.querySelector(".action-row");
 
 let profiles = [];
 let decisions = loadDecisions();
 let history = [];
+let currentView = "swipe";
 
 function loadDecisions() {
   try {
@@ -45,6 +52,14 @@ function sanitizeValue(value, fallback = "N/A") {
 function visibleProfiles() {
   const seen = new Set([...decisions.saved, ...decisions.ignored]);
   return profiles.filter((profile) => !seen.has(profile.uni));
+}
+
+function profilesByDecision(type) {
+  const orderedIds = decisions[type];
+  return orderedIds
+    .map((uni) => profiles.find((profile) => profile.uni === uni))
+    .filter(Boolean)
+    .reverse();
 }
 
 function normalizeInstagramHandle(value) {
@@ -99,6 +114,98 @@ function setOptionalField(card, selector, wrapperSelector, value) {
   card.querySelector(selector).textContent = content;
 }
 
+function wireInstagramLink(link, handle) {
+  if (!handle) {
+    link.hidden = true;
+    link.removeAttribute("href");
+    link.textContent = "";
+    return;
+  }
+
+  link.hidden = false;
+  link.href = `https://www.instagram.com/${handle}/`;
+  link.textContent = `@${handle}`;
+}
+
+function applyImageState(image, profile) {
+  const imageUrl = sanitizeValue(profile.image_url, "");
+
+  if (imageUrl) {
+    image.src = imageUrl;
+    image.alt = `${sanitizeValue(profile.instagram, "Profile")} from ${sanitizeValue(profile.school)}`;
+    image.classList.remove("is-hidden");
+  } else {
+    image.removeAttribute("src");
+    image.alt = "";
+    image.classList.add("is-hidden");
+  }
+
+  image.loading = "eager";
+  image.onerror = () => {
+    image.removeAttribute("src");
+    image.alt = "";
+    image.classList.add("is-hidden");
+  };
+  image.onload = () => {
+    image.classList.remove("is-hidden");
+  };
+}
+
+function populateProfileFields(card, profile) {
+  const bio = sanitizeValue(profile.bio, "");
+  const quote = sanitizeValue(profile.quote, "");
+  const instagramHandle = normalizeInstagramHandle(profile.instagram);
+  const instagramEl = card.querySelector(".profile-instagram");
+
+  card.querySelector(".profile-name").textContent = sanitizeValue(profile.instagram, profile.uni);
+  card.querySelector(".profile-school").textContent = composeSchoolLine(profile);
+  wireInstagramLink(instagramEl, instagramHandle);
+
+  const bioEl = card.querySelector(".profile-bio");
+  if (!bio) {
+    bioEl.hidden = true;
+    bioEl.textContent = "";
+  } else {
+    bioEl.hidden = false;
+    bioEl.textContent = bio;
+  }
+
+  setOptionalField(card, ".profile-major", ".major-wrapper", profile.major);
+  setOptionalField(card, ".profile-minor", ".minor-wrapper", profile.minor);
+  setOptionalField(card, ".profile-orientation", ".orientation-wrapper", profile.sexual_orientation);
+  setOptionalField(card, ".profile-zodiac", ".zodiac-wrapper", profile.zodiac);
+
+  const quoteEl = card.querySelector(".profile-quote");
+  if (!quote) {
+    quoteEl.hidden = true;
+    quoteEl.textContent = "";
+  } else {
+    quoteEl.hidden = false;
+    quoteEl.textContent = `“${quote}”`;
+  }
+}
+
+function renderCollectionCard(profile) {
+  const card = collectionTemplate.content.firstElementChild.cloneNode(true);
+  const image = card.querySelector(".collection-image");
+
+  applyImageState(image, profile);
+  populateProfileFields(card, profile);
+
+  return card;
+}
+
+function moveProfileToGroup(profile, targetGroup) {
+  const sourceGroup = targetGroup === "saved" ? "ignored" : "saved";
+
+  decisions[sourceGroup] = decisions[sourceGroup].filter((uni) => uni !== profile.uni);
+  decisions[targetGroup] = decisions[targetGroup].filter((uni) => uni !== profile.uni);
+  decisions[targetGroup].push(profile.uni);
+
+  persistDecisions();
+  renderCurrentView();
+}
+
 function renderDeck() {
   deck.innerHTML = "";
   const remaining = visibleProfiles();
@@ -137,64 +244,67 @@ function renderDeck() {
 
 function populateCard(card, profile) {
   const image = card.querySelector(".profile-image");
-  const imageUrl = sanitizeValue(profile.image_url, "");
-  const bio = sanitizeValue(profile.bio, "");
-  const quote = sanitizeValue(profile.quote, "");
-  const instagramHandle = normalizeInstagramHandle(profile.instagram);
-  const instagramEl = card.querySelector(".profile-instagram");
+  applyImageState(image, profile);
+  populateProfileFields(card, profile);
+}
 
-  if (imageUrl) {
-    image.src = imageUrl;
-    image.alt = `${sanitizeValue(profile.instagram, "Profile")} from ${sanitizeValue(profile.school)}`;
-    image.classList.remove("is-hidden");
-  } else {
-    image.removeAttribute("src");
-    image.alt = "";
-    image.classList.add("is-hidden");
+function renderCollection(type) {
+  collectionView.innerHTML = "";
+  const collectionProfiles = profilesByDecision(type);
+
+  if (!collectionProfiles.length) {
+    collectionView.innerHTML = `
+      <div class="profile-card empty-state">
+        <div>
+          <h2>No profiles here yet</h2>
+          <p>${type === "saved" ? "Profiles you save will show up here." : "Profiles you skip will show up here."}</p>
+        </div>
+      </div>
+    `;
+    return;
   }
 
-  image.loading = "eager";
-  image.onerror = () => {
-    image.removeAttribute("src");
-    image.alt = "";
-    image.classList.add("is-hidden");
-  };
-  image.onload = () => {
-    image.classList.remove("is-hidden");
-  };
+  collectionProfiles.forEach((profile) => {
+    const card = renderCollectionCard(profile);
+    const moveButton = card.querySelector(".collection-move-button");
+    const targetGroup = type === "saved" ? "ignored" : "saved";
 
-  card.querySelector(".profile-name").textContent = sanitizeValue(profile.instagram, profile.uni);
-  card.querySelector(".profile-school").textContent = composeSchoolLine(profile);
-  if (instagramHandle) {
-    instagramEl.hidden = false;
-    instagramEl.href = `https://www.instagram.com/${instagramHandle}/`;
-    instagramEl.textContent = `@${instagramHandle}`;
-  } else {
-    instagramEl.hidden = true;
-    instagramEl.removeAttribute("href");
-    instagramEl.textContent = "";
-  }
-  const bioEl = card.querySelector(".profile-bio");
-  if (!bio) {
-    bioEl.hidden = true;
-    bioEl.textContent = "";
-  } else {
-    bioEl.hidden = false;
-    bioEl.textContent = bio;
+    moveButton.textContent = type === "saved" ? "Skip" : "Save";
+    moveButton.classList.add(type === "saved" ? "to-skip" : "to-save");
+    moveButton.addEventListener("click", () => {
+      moveProfileToGroup(profile, targetGroup);
+    });
+
+    collectionView.append(card);
+  });
+}
+
+function updateViewButtons() {
+  viewAllButton.classList.toggle("is-active", currentView === "swipe");
+  viewSavedButton.classList.toggle("is-active", currentView === "saved");
+  viewIgnoredButton.classList.toggle("is-active", currentView === "ignored");
+}
+
+function renderCurrentView() {
+  updateViewButtons();
+
+  if (currentView === "swipe") {
+    deck.hidden = false;
+    collectionView.hidden = true;
+    actionRow.hidden = false;
+    renderDeck();
+    return;
   }
 
-  setOptionalField(card, ".profile-major", ".major-wrapper", profile.major);
-  setOptionalField(card, ".profile-minor", ".minor-wrapper", profile.minor);
-  setOptionalField(card, ".profile-orientation", ".orientation-wrapper", profile.sexual_orientation);
-  setOptionalField(card, ".profile-zodiac", ".zodiac-wrapper", profile.zodiac);
+  deck.hidden = true;
+  collectionView.hidden = false;
+  actionRow.hidden = true;
+  renderCollection(currentView);
+}
 
-  const quoteEl = card.querySelector(".profile-quote");
-  if (!quote) {
-    quoteEl.hidden = true;
-  } else {
-    quoteEl.hidden = false;
-    quoteEl.textContent = `“${quote}”`;
-  }
+function setView(view) {
+  currentView = view;
+  renderCurrentView();
 }
 
 function commitDecision(profile, direction) {
@@ -207,7 +317,7 @@ function commitDecision(profile, direction) {
   }
 
   persistDecisions();
-  renderDeck();
+  renderCurrentView();
 }
 
 function animateOff(card, profile, direction) {
@@ -338,7 +448,7 @@ function rewindLastDecision() {
   }
 
   persistDecisions();
-  renderDeck();
+  renderCurrentView();
 }
 
 async function init() {
@@ -352,7 +462,7 @@ async function init() {
     }
 
     profiles = await response.json();
-    renderDeck();
+    renderCurrentView();
   } catch (error) {
     deck.innerHTML = `
       <div class="profile-card empty-state">
@@ -368,11 +478,14 @@ async function init() {
 saveButton.addEventListener("click", () => triggerTopCard("save"));
 ignoreButton.addEventListener("click", () => triggerTopCard("ignore"));
 rewindButton.addEventListener("click", rewindLastDecision);
+viewAllButton.addEventListener("click", () => setView("swipe"));
+viewSavedButton.addEventListener("click", () => setView("saved"));
+viewIgnoredButton.addEventListener("click", () => setView("ignored"));
 resetButton.addEventListener("click", () => {
   decisions = { saved: [], ignored: [] };
   history = [];
   persistDecisions();
-  renderDeck();
+  setView("swipe");
 });
 
 init();
