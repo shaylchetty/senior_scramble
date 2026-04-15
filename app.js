@@ -129,15 +129,18 @@ function wireInstagramLink(link, handle) {
 
 function applyImageState(image, profile) {
   const imageUrl = sanitizeValue(profile.image_url, "");
+  const card = image.closest(".profile-card, .collection-card");
 
   if (imageUrl) {
     image.src = imageUrl;
     image.alt = `${sanitizeValue(profile.instagram, "Profile")} from ${sanitizeValue(profile.school)}`;
     image.classList.remove("is-hidden");
+    card?.classList.remove("no-image");
   } else {
     image.removeAttribute("src");
     image.alt = "";
     image.classList.add("is-hidden");
+    card?.classList.add("no-image");
   }
 
   image.loading = "eager";
@@ -145,9 +148,11 @@ function applyImageState(image, profile) {
     image.removeAttribute("src");
     image.alt = "";
     image.classList.add("is-hidden");
+    card?.classList.add("no-image");
   };
   image.onload = () => {
     image.classList.remove("is-hidden");
+    card?.classList.remove("no-image");
   };
 }
 

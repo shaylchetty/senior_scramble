@@ -246,6 +246,10 @@ h1 {
   opacity: 0.82;
 }
 
+.profile-card.is-next.no-image {
+  opacity: 1;
+}
+
 .profile-card.is-dragging {
   transition: none;
 }
