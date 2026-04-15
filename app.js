@@ -9,6 +9,7 @@ const defaultState = () => ({
   history: [],
   currentView: "swipe",
   profileOrder: [],
+  searchQuery: "",
 });
 
 const deck = document.getElementById("card-deck");
@@ -29,6 +30,8 @@ const resumeNote = document.getElementById("resume-note");
 const exportButton = document.getElementById("export-button");
 const importButton = document.getElementById("import-button");
 const importInput = document.getElementById("import-input");
+const searchInput = document.getElementById("search-input");
+const clearSearchButton = document.getElementById("clear-search-button");
 
 let profiles = [];
 let persistedState = loadState();
@@ -36,6 +39,7 @@ let decisions = persistedState.decisions;
 let history = persistedState.history;
 let currentView = persistedState.currentView;
 let profileOrder = persistedState.profileOrder;
+let searchQuery = persistedState.searchQuery;
 
 function normalizeDecisionState(value) {
   const unique = Array.isArray(value) ? [...new Set(value.filter(Boolean).map(String))] : [];
@@ -60,6 +64,10 @@ function normalizeProfileOrder(value) {
   return Array.isArray(value) ? [...new Set(value.filter(Boolean).map(String))] : [];
 }
 
+function normalizeSearchQuery(value) {
+  return value === null || value === undefined ? "" : String(value).trim().toLowerCase();
+}
+
 function loadState() {
   try {
     const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY));
@@ -78,6 +86,7 @@ function loadState() {
         history: [],
         currentView: "swipe",
         profileOrder: [],
+        searchQuery: "",
       };
     }
 
@@ -90,6 +99,7 @@ function loadState() {
       history: normalizeHistory(parsed.history),
       currentView: normalizeView(parsed.currentView),
       profileOrder: normalizeProfileOrder(parsed.profileOrder),
+      searchQuery: normalizeSearchQuery(parsed.searchQuery),
     };
   } catch {
     return defaultState();
@@ -106,12 +116,14 @@ function persistState() {
     history: normalizeHistory(history),
     currentView: normalizeView(currentView),
     profileOrder: normalizeProfileOrder(profileOrder),
+    searchQuery: normalizeSearchQuery(searchQuery),
   };
 
   decisions = persistedState.decisions;
   history = persistedState.history;
   currentView = persistedState.currentView;
   profileOrder = persistedState.profileOrder;
+  searchQuery = persistedState.searchQuery;
 
   localStorage.setItem(STORAGE_KEY, JSON.stringify(persistedState));
   updateCounts();
@@ -128,6 +140,7 @@ function updateResumeNote() {
   const totalCount = profiles.length;
   const remainingCount = totalCount ? Math.max(totalCount - reviewedCount, 0) : 0;
   const viewLabel = currentView === "swipe" ? "All Profiles" : currentView === "saved" ? "Saved" : "Skip";
+  const searchSuffix = searchQuery ? ` Search is filtering results for "${searchQuery}".` : "";
 
   if (!totalCount) {
     resumeNote.textContent = "Progress and lists stay in this browser, and you can export a backup anytime.";
@@ -136,7 +149,7 @@ function updateResumeNote() {
 
   resumeNote.textContent =
     `You have reviewed ${reviewedCount} of ${totalCount} profiles, with ${remainingCount} left. ` +
-    `You’ll reopen on ${viewLabel} in this browser.`;
+    `You’ll reopen on ${viewLabel} in this browser.${searchSuffix}`;
 }
 
 function sanitizeValue(value, fallback = "N/A") {
@@ -148,6 +161,33 @@ function sanitizeValue(value, fallback = "N/A") {
   return trimmed.length ? trimmed : fallback;
 }
 
+function searchableText(profile) {
+  return [
+    profile.instagram,
+    normalizeInstagramHandle(profile.instagram),
+    profile.uni,
+    profile.school,
+    profile.major,
+    profile.minor,
+    profile.zodiac,
+    profile.sexual_orientation,
+    profile.bio,
+    profile.quote,
+  ]
+    .filter((value) => value !== null && value !== undefined)
+    .map((value) => String(value).trim().toLowerCase())
+    .filter(Boolean)
+    .join(" ");
+}
+
+function matchesSearch(profile) {
+  if (!searchQuery) {
+    return true;
+  }
+
+  return searchableText(profile).includes(searchQuery);
+}
+
 function visibleProfiles() {
   const seen = new Set([...decisions.saved, ...decisions.ignored]);
   const profileMap = new Map(profiles.map((profile) => [String(profile.uni), profile]));
@@ -155,7 +195,7 @@ function visibleProfiles() {
     .map((uni) => profileMap.get(String(uni)))
     .filter(Boolean);
 
-  return ordered.filter((profile) => !seen.has(profile.uni));
+  return ordered.filter((profile) => !seen.has(profile.uni) && matchesSearch(profile));
 }
 
 function profilesByDecision(type) {
@@ -164,6 +204,7 @@ function profilesByDecision(type) {
   return orderedIds
     .map((uni) => profileMap.get(String(uni)))
     .filter(Boolean)
+    .filter(matchesSearch)
     .reverse();
 }
 
@@ -356,8 +397,8 @@ function renderDeck() {
     deck.innerHTML = `
       <div class="profile-card empty-state">
         <div>
-          <h2>You’re caught up</h2>
-          <p>Reset decisions to review these profiles again, or swap in a new JSON file.</p>
+          <h2>${searchQuery ? "No profiles match" : "You’re caught up"}</h2>
+          <p>${searchQuery ? "Try another search term or clear search to see more profiles." : "Reset decisions to review these profiles again, or swap in a new JSON file."}</p>
         </div>
       </div>
     `;
@@ -398,8 +439,14 @@ function renderCollection(type) {
     collectionView.innerHTML = `
       <div class="profile-card empty-state">
         <div>
-          <h2>No profiles here yet</h2>
-          <p>${type === "saved" ? "Profiles you save will show up here." : "Profiles you skip will show up here."}</p>
+          <h2>${searchQuery ? "No profiles match" : "No profiles here yet"}</h2>
+          <p>${
+            searchQuery
+              ? "Try another search term or clear search to see more profiles."
+              : type === "saved"
+                ? "Profiles you save will show up here."
+                : "Profiles you skip will show up here."
+          }</p>
         </div>
       </div>
     `;
@@ -446,6 +493,12 @@ function renderCurrentView() {
 
 function setView(view) {
   currentView = view;
+  persistState();
+  renderCurrentView();
+}
+
+function setSearchQuery(nextQuery) {
+  searchQuery = normalizeSearchQuery(nextQuery);
   persistState();
   renderCurrentView();
 }
@@ -639,6 +692,7 @@ async function importState(file) {
 async function init() {
   updateCounts();
   updateResumeNote();
+  searchInput.value = searchQuery;
 
   try {
     const response = await fetch(DATA_URL);
@@ -671,6 +725,14 @@ viewSavedButton.addEventListener("click", () => setView("saved"));
 viewIgnoredButton.addEventListener("click", () => setView("ignored"));
 exportButton.addEventListener("click", exportState);
 importButton.addEventListener("click", () => importInput.click());
+searchInput.addEventListener("input", (event) => {
+  setSearchQuery(event.target.value);
+});
+clearSearchButton.addEventListener("click", () => {
+  searchInput.value = "";
+  setSearchQuery("");
+  searchInput.focus();
+});
 importInput.addEventListener("change", async (event) => {
   const file = event.target.files?.[0];
 
@@ -680,6 +742,7 @@ importInput.addEventListener("change", async (event) => {
 
   try {
     await importState(file);
+    searchInput.value = searchQuery;
   } catch {
     window.alert("That backup file could not be imported.");
   } finally {

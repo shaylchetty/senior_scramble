@@ -18,20 +18,48 @@
         <div class="panel-copy">
           <p class="eyebrow">Columbia University ♔ Spring 2026</p>
           <h1>Senior Scramble</h1>
-          <p class="subcopy">Sort profiles with a quick save or ignore.</p>
+          <p class="subcopy">Sort profiles with a quick save or skip.</p>
           <p id="resume-note" class="resume-note"></p>
         </div>
 
+        <div class="search-row">
+          <label class="search-field" for="search-input">
+            <span class="search-label">Search Profiles</span>
+            <input
+              id="search-input"
+              class="search-input"
+              type="search"
+              placeholder="Search handle, school, uni, major, star sign..."
+              autocomplete="off"
+            />
+          </label>
+          <button id="clear-search-button" class="ghost-button" type="button">
+            Clear Search
+          </button>
+        </div>
+
         <div class="status-row">
-          <button id="view-all-button" class="status-chip view-button is-active" type="button">
+          <button
+            id="view-all-button"
+            class="status-chip view-button is-active"
+            type="button"
+          >
             <span class="status-label">View</span>
             <strong>All Profiles</strong>
           </button>
-          <button id="view-saved-button" class="status-chip view-button" type="button">
+          <button
+            id="view-saved-button"
+            class="status-chip view-button"
+            type="button"
+          >
             <span class="status-label">Saved</span>
             <strong id="saved-count">0</strong>
           </button>
-          <button id="view-ignored-button" class="status-chip view-button" type="button">
+          <button
+            id="view-ignored-button"
+            class="status-chip view-button"
+            type="button"
+          >
             <span class="status-label">Skip</span>
             <strong id="ignored-count">0</strong>
           </button>
@@ -41,9 +69,18 @@
         </div>
 
         <div class="storage-tools">
-          <button id="export-button" class="ghost-button" type="button">Export Lists</button>
-          <button id="import-button" class="ghost-button" type="button">Import Lists</button>
-          <input id="import-input" type="file" accept="application/json" hidden />
+          <button id="export-button" class="ghost-button" type="button">
+            Export Lists
+          </button>
+          <button id="import-button" class="ghost-button" type="button">
+            Import Lists
+          </button>
+          <input
+            id="import-input"
+            type="file"
+            accept="application/json"
+            hidden
+          />
         </div>
       </section>
 
@@ -142,7 +179,11 @@
               <h2 class="profile-name"></h2>
               <p class="profile-school"></p>
             </div>
-            <a class="profile-instagram" target="_blank" rel="noreferrer noopener"></a>
+            <a
+              class="profile-instagram"
+              target="_blank"
+              rel="noreferrer noopener"
+            ></a>
           </div>
           <div class="detail-grid">
             <div class="detail-pill major-wrapper">

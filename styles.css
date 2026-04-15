@@ -95,6 +95,47 @@ h1 {
   line-height: 1.5;
 }
 
+.search-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: end;
+  margin-top: 18px;
+}
+
+.search-field {
+  display: flex;
+  flex: 1 1 320px;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.search-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.search-input {
+  width: 100%;
+  border: 1px solid rgba(122, 83, 52, 0.16);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 14px 16px;
+  font: inherit;
+  color: var(--text);
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.search-input:focus {
+  border-color: rgba(122, 83, 52, 0.34);
+  box-shadow: 0 0 0 4px rgba(154, 94, 50, 0.08);
+  background: rgba(255, 255, 255, 0.96);
+}
+
 .status-row {
   display: flex;
   flex-wrap: wrap;
