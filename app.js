@@ -8,6 +8,7 @@ const defaultState = () => ({
   decisions: { saved: [], ignored: [] },
   history: [],
   currentView: "swipe",
+  profileOrder: [],
 });
 
 const deck = document.getElementById("card-deck");
@@ -34,6 +35,7 @@ let persistedState = loadState();
 let decisions = persistedState.decisions;
 let history = persistedState.history;
 let currentView = persistedState.currentView;
+let profileOrder = persistedState.profileOrder;
 
 function normalizeDecisionState(value) {
   const unique = Array.isArray(value) ? [...new Set(value.filter(Boolean).map(String))] : [];
@@ -54,6 +56,10 @@ function normalizeView(value) {
   return ["swipe", "saved", "ignored"].includes(value) ? value : "swipe";
 }
 
+function normalizeProfileOrder(value) {
+  return Array.isArray(value) ? [...new Set(value.filter(Boolean).map(String))] : [];
+}
+
 function loadState() {
   try {
     const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY));
@@ -71,6 +77,7 @@ function loadState() {
         },
         history: [],
         currentView: "swipe",
+        profileOrder: [],
       };
     }
 
@@ -82,6 +89,7 @@ function loadState() {
       },
       history: normalizeHistory(parsed.history),
       currentView: normalizeView(parsed.currentView),
+      profileOrder: normalizeProfileOrder(parsed.profileOrder),
     };
   } catch {
     return defaultState();
@@ -97,11 +105,13 @@ function persistState() {
     },
     history: normalizeHistory(history),
     currentView: normalizeView(currentView),
+    profileOrder: normalizeProfileOrder(profileOrder),
   };
 
   decisions = persistedState.decisions;
   history = persistedState.history;
   currentView = persistedState.currentView;
+  profileOrder = persistedState.profileOrder;
 
   localStorage.setItem(STORAGE_KEY, JSON.stringify(persistedState));
   updateCounts();
@@ -140,15 +150,53 @@ function sanitizeValue(value, fallback = "N/A") {
 
 function visibleProfiles() {
   const seen = new Set([...decisions.saved, ...decisions.ignored]);
-  return profiles.filter((profile) => !seen.has(profile.uni));
+  const profileMap = new Map(profiles.map((profile) => [String(profile.uni), profile]));
+  const ordered = profileOrder
+    .map((uni) => profileMap.get(String(uni)))
+    .filter(Boolean);
+
+  return ordered.filter((profile) => !seen.has(profile.uni));
 }
 
 function profilesByDecision(type) {
+  const profileMap = new Map(profiles.map((profile) => [String(profile.uni), profile]));
   const orderedIds = decisions[type];
   return orderedIds
-    .map((uni) => profiles.find((profile) => profile.uni === uni))
+    .map((uni) => profileMap.get(String(uni)))
     .filter(Boolean)
     .reverse();
+}
+
+function shuffleList(items) {
+  const copy = [...items];
+
+  for (let index = copy.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [copy[index], copy[swapIndex]] = [copy[swapIndex], copy[index]];
+  }
+
+  return copy;
+}
+
+function initializeProfileOrder() {
+  const allUnis = profiles.map((profile) => String(profile.uni));
+  const knownUnis = new Set(allUnis);
+  const cleanedExisting = profileOrder.filter((uni) => knownUnis.has(String(uni)));
+  const missingUnis = allUnis.filter((uni) => !cleanedExisting.includes(uni));
+
+  if (!cleanedExisting.length) {
+    profileOrder = shuffleList(allUnis);
+    persistState();
+    return;
+  }
+
+  if (missingUnis.length) {
+    profileOrder = [...cleanedExisting, ...shuffleList(missingUnis)];
+    persistState();
+    return;
+  }
+
+  profileOrder = cleanedExisting;
 }
 
 function normalizeInstagramHandle(value) {
@@ -600,6 +648,7 @@ async function init() {
     }
 
     profiles = await response.json();
+    initializeProfileOrder();
     renderCurrentView();
     updateResumeNote();
   } catch (error) {
