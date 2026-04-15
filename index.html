@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scramble Swiper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="app-panel">
+        <div class="panel-copy">
+          <p class="eyebrow">Columbia University ♔ Spring 2026</p>
+          <h1>Senior Scramble</h1>
+          <p class="subcopy">Sort profiles with a quick save or ignore.</p>
+        </div>
+
+        <div class="status-row">
+          <div class="status-chip">
+            <span class="status-label">Saved</span>
+            <strong id="saved-count">0</strong>
+          </div>
+          <div class="status-chip">
+            <span class="status-label">Ignored</span>
+            <strong id="ignored-count">0</strong>
+          </div>
+          <button id="reset-button" class="ghost-button" type="button">
+            Reset
+          </button>
+        </div>
+      </section>
+
+      <section class="deck-panel">
+        <div class="deck-frame">
+          <div id="card-deck" class="card-deck" aria-live="polite"></div>
+
+          <div class="action-row">
+            <button
+              id="rewind-button"
+              class="action-button action-rewind"
+              type="button"
+              aria-label="Rewind"
+              title="Rewind"
+            >
+              &#8630;
+            </button>
+            <button
+              id="ignore-button"
+              class="action-button action-ignore"
+              type="button"
+            >
+              Ignore
+            </button>
+            <button
+              id="save-button"
+              class="action-button action-save"
+              type="button"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <template id="profile-card-template">
+      <article class="profile-card">
+        <div class="swipe-indicator swipe-indicator-left">Ignore</div>
+        <div class="swipe-indicator swipe-indicator-right">Save</div>
+        <img class="profile-image" alt="" />
+        <div class="card-gradient"></div>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="identity-row">
+              <div>
+                <h2 class="profile-name"></h2>
+                <p class="profile-school"></p>
+              </div>
+            </div>
+
+            <a
+              class="profile-instagram"
+              target="_blank"
+              rel="noreferrer noopener"
+            ></a>
+          </div>
+
+          <div class="card-bottom">
+            <div class="detail-grid">
+              <div class="detail-pill major-wrapper">
+                <span class="detail-label">Major</span>
+                <span class="profile-major"></span>
+              </div>
+              <div class="detail-pill detail-pill-optional minor-wrapper">
+                <span class="detail-label">Minor</span>
+                <span class="profile-minor"></span>
+              </div>
+              <div class="detail-pill detail-pill-optional orientation-wrapper">
+                <span class="detail-label">Orientation</span>
+                <span class="profile-orientation"></span>
+              </div>
+              <div class="detail-pill zodiac-wrapper">
+                <span class="detail-label">Star Sign</span>
+                <span class="profile-zodiac"></span>
+              </div>
+            </div>
+
+            <p class="profile-bio"></p>
+            <blockquote class="profile-quote"></blockquote>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
