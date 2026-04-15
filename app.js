@@ -42,7 +42,9 @@ let profileOrder = persistedState.profileOrder;
 let searchQuery = persistedState.searchQuery;
 
 function normalizeDecisionState(value) {
-  const unique = Array.isArray(value) ? [...new Set(value.filter(Boolean).map(String))] : [];
+  const unique = Array.isArray(value)
+    ? [...new Set(value.filter(Boolean).map(String))]
+    : [];
   return unique;
 }
 
@@ -52,8 +54,14 @@ function normalizeHistory(value) {
   }
 
   return value
-    .filter((entry) => entry && typeof entry === "object" && entry.uni && entry.direction)
-    .map((entry) => ({ uni: String(entry.uni), direction: entry.direction === "save" ? "save" : "ignore" }));
+    .filter(
+      (entry) =>
+        entry && typeof entry === "object" && entry.uni && entry.direction,
+    )
+    .map((entry) => ({
+      uni: String(entry.uni),
+      direction: entry.direction === "save" ? "save" : "ignore",
+    }));
 }
 
 function normalizeView(value) {
@@ -61,11 +69,15 @@ function normalizeView(value) {
 }
 
 function normalizeProfileOrder(value) {
-  return Array.isArray(value) ? [...new Set(value.filter(Boolean).map(String))] : [];
+  return Array.isArray(value)
+    ? [...new Set(value.filter(Boolean).map(String))]
+    : [];
 }
 
 function normalizeSearchQuery(value) {
-  return value === null || value === undefined ? "" : String(value).trim().toLowerCase();
+  return value === null || value === undefined
+    ? ""
+    : String(value).trim().toLowerCase();
 }
 
 function loadState() {
@@ -128,6 +140,7 @@ function persistState() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(persistedState));
   updateCounts();
   updateResumeNote();
+  clearSearchButton.classList.toggle("is-visible", Boolean(searchQuery));
 }
 
 function updateCounts() {
@@ -138,12 +151,22 @@ function updateCounts() {
 function updateResumeNote() {
   const reviewedCount = decisions.saved.length + decisions.ignored.length;
   const totalCount = profiles.length;
-  const remainingCount = totalCount ? Math.max(totalCount - reviewedCount, 0) : 0;
-  const viewLabel = currentView === "swipe" ? "All Profiles" : currentView === "saved" ? "Saved" : "Skip";
-  const searchSuffix = searchQuery ? ` Search is filtering results for "${searchQuery}".` : "";
+  const remainingCount = totalCount
+    ? Math.max(totalCount - reviewedCount, 0)
+    : 0;
+  const viewLabel =
+    currentView === "swipe"
+      ? "All Profiles"
+      : currentView === "saved"
+        ? "Saved"
+        : "Skip";
+  const searchSuffix = searchQuery
+    ? ` Search is filtering results for "${searchQuery}".`
+    : "";
 
   if (!totalCount) {
-    resumeNote.textContent = "Progress and lists stay in this browser, and you can export a backup anytime.";
+    resumeNote.textContent =
+      "Progress and lists stay in this browser, and you can export a backup anytime.";
     return;
   }
 
@@ -190,16 +213,22 @@ function matchesSearch(profile) {
 
 function visibleProfiles() {
   const seen = new Set([...decisions.saved, ...decisions.ignored]);
-  const profileMap = new Map(profiles.map((profile) => [String(profile.uni), profile]));
+  const profileMap = new Map(
+    profiles.map((profile) => [String(profile.uni), profile]),
+  );
   const ordered = profileOrder
     .map((uni) => profileMap.get(String(uni)))
     .filter(Boolean);
 
-  return ordered.filter((profile) => !seen.has(profile.uni) && matchesSearch(profile));
+  return ordered.filter(
+    (profile) => !seen.has(profile.uni) && matchesSearch(profile),
+  );
 }
 
 function profilesByDecision(type) {
-  const profileMap = new Map(profiles.map((profile) => [String(profile.uni), profile]));
+  const profileMap = new Map(
+    profiles.map((profile) => [String(profile.uni), profile]),
+  );
   const orderedIds = decisions[type];
   return orderedIds
     .map((uni) => profileMap.get(String(uni)))
@@ -222,7 +251,9 @@ function shuffleList(items) {
 function initializeProfileOrder() {
   const allUnis = profiles.map((profile) => String(profile.uni));
   const knownUnis = new Set(allUnis);
-  const cleanedExisting = profileOrder.filter((uni) => knownUnis.has(String(uni)));
+  const cleanedExisting = profileOrder.filter((uni) =>
+    knownUnis.has(String(uni)),
+  );
   const missingUnis = allUnis.filter((uni) => !cleanedExisting.includes(uni));
 
   if (!cleanedExisting.length) {
@@ -246,7 +277,11 @@ function normalizeInstagramHandle(value) {
     return "";
   }
 
-  return raw.replace(/^@+/, "").trim().replace(/^https?:\/\/(www\.)?instagram\.com\//i, "").replace(/\/+$/, "");
+  return raw
+    .replace(/^@+/, "")
+    .trim()
+    .replace(/^https?:\/\/(www\.)?instagram\.com\//i, "")
+    .replace(/\/+$/, "");
 }
 
 function hasDisplayValue(value) {
@@ -260,7 +295,12 @@ function hasDisplayValue(value) {
   }
 
   const normalized = content.toLowerCase();
-  return normalized !== "n/a" && normalized !== "na" && normalized !== "null" && normalized !== "undefined";
+  return (
+    normalized !== "n/a" &&
+    normalized !== "na" &&
+    normalized !== "null" &&
+    normalized !== "undefined"
+  );
 }
 
 function composeSchoolLine(profile) {
@@ -340,8 +380,12 @@ function populateProfileFields(card, profile) {
   const instagramHandle = normalizeInstagramHandle(profile.instagram);
   const instagramEl = card.querySelector(".profile-instagram");
 
-  card.querySelector(".profile-name").textContent = sanitizeValue(profile.instagram, profile.uni);
-  card.querySelector(".profile-school").textContent = composeSchoolLine(profile);
+  card.querySelector(".profile-name").textContent = sanitizeValue(
+    profile.instagram,
+    profile.uni,
+  );
+  card.querySelector(".profile-school").textContent =
+    composeSchoolLine(profile);
   wireInstagramLink(instagramEl, instagramHandle);
 
   const bioEl = card.querySelector(".profile-bio");
@@ -355,7 +399,12 @@ function populateProfileFields(card, profile) {
 
   setOptionalField(card, ".profile-major", ".major-wrapper", profile.major);
   setOptionalField(card, ".profile-minor", ".minor-wrapper", profile.minor);
-  setOptionalField(card, ".profile-orientation", ".orientation-wrapper", profile.sexual_orientation);
+  setOptionalField(
+    card,
+    ".profile-orientation",
+    ".orientation-wrapper",
+    profile.sexual_orientation,
+  );
   setOptionalField(card, ".profile-zodiac", ".zodiac-wrapper", profile.zodiac);
 
   const quoteEl = card.querySelector(".profile-quote");
@@ -381,8 +430,12 @@ function renderCollectionCard(profile) {
 function moveProfileToGroup(profile, targetGroup) {
   const sourceGroup = targetGroup === "saved" ? "ignored" : "saved";
 
-  decisions[sourceGroup] = decisions[sourceGroup].filter((uni) => uni !== profile.uni);
-  decisions[targetGroup] = decisions[targetGroup].filter((uni) => uni !== profile.uni);
+  decisions[sourceGroup] = decisions[sourceGroup].filter(
+    (uni) => uni !== profile.uni,
+  );
+  decisions[targetGroup] = decisions[targetGroup].filter(
+    (uni) => uni !== profile.uni,
+  );
   decisions[targetGroup].push(profile.uni);
 
   persistState();
@@ -640,7 +693,9 @@ function rewindLastDecision() {
   if (lastDecision.direction === "save") {
     decisions.saved = decisions.saved.filter((uni) => uni !== lastDecision.uni);
   } else {
-    decisions.ignored = decisions.ignored.filter((uni) => uni !== lastDecision.uni);
+    decisions.ignored = decisions.ignored.filter(
+      (uni) => uni !== lastDecision.uni,
+    );
   }
 
   persistState();
@@ -656,7 +711,9 @@ function exportState() {
     currentView,
   };
 
-  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+  const blob = new Blob([JSON.stringify(payload, null, 2)], {
+    type: "application/json",
+  });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   const stamp = new Date().toISOString().slice(0, 10);
@@ -676,7 +733,9 @@ async function importState(file) {
     version: STORAGE_VERSION,
     decisions: {
       saved: normalizeDecisionState(parsed.decisions?.saved ?? parsed.saved),
-      ignored: normalizeDecisionState(parsed.decisions?.ignored ?? parsed.ignored),
+      ignored: normalizeDecisionState(
+        parsed.decisions?.ignored ?? parsed.ignored,
+      ),
     },
     history: normalizeHistory(parsed.history),
     currentView: normalizeView(parsed.currentView),
@@ -693,6 +752,7 @@ async function init() {
   updateCounts();
   updateResumeNote();
   searchInput.value = searchQuery;
+  clearSearchButton.classList.toggle("is-visible", Boolean(searchQuery));
 
   try {
     const response = await fetch(DATA_URL);
@@ -750,6 +810,14 @@ importInput.addEventListener("change", async (event) => {
   }
 });
 resetButton.addEventListener("click", () => {
+  const shouldReset = window.confirm(
+    "Reset your saved, skipped, rewind history, and current progress in this browser?",
+  );
+
+  if (!shouldReset) {
+    return;
+  }
+
   decisions = { saved: [], ignored: [] };
   history = [];
   currentView = "swipe";

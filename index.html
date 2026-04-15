@@ -25,17 +25,25 @@
         <div class="search-row">
           <label class="search-field" for="search-input">
             <span class="search-label">Search Profiles</span>
-            <input
-              id="search-input"
-              class="search-input"
-              type="search"
-              placeholder="Search handle, school, uni, major, star sign..."
-              autocomplete="off"
-            />
+            <div class="search-input-wrap">
+              <input
+                id="search-input"
+                class="search-input"
+                type="search"
+                placeholder="Search..."
+                autocomplete="off"
+              />
+              <button
+                id="clear-search-button"
+                class="clear-search-button"
+                type="button"
+                aria-label="Clear search"
+                title="Clear search"
+              >
+                &times;
+              </button>
+            </div>
           </label>
-          <button id="clear-search-button" class="ghost-button" type="button">
-            Clear Search
-          </button>
         </div>
 
         <div class="status-row">
@@ -63,9 +71,6 @@
             <span class="status-label">Skip</span>
             <strong id="ignored-count">0</strong>
           </button>
-          <button id="reset-button" class="ghost-button" type="button">
-            Reset
-          </button>
         </div>
 
         <div class="storage-tools">
@@ -74,6 +79,9 @@
           </button>
           <button id="import-button" class="ghost-button" type="button">
             Import Lists
+          </button>
+          <button id="reset-button" class="ghost-button" type="button">
+            Reset
           </button>
           <input
             id="import-input"
