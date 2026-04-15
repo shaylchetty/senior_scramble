@@ -89,13 +89,6 @@ h1 {
   line-height: 1.6;
 }
 
-.resume-note {
-  margin: 14px 0 0;
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.5;
-}
-
 .search-row {
   display: flex;
   flex-wrap: wrap;
@@ -205,7 +198,9 @@ h1 {
 }
 
 .status-chip {
-  min-width: 102px;
+  min-width: 0;
+  flex: 1 1 0;
+  padding: 11px 14px;
 }
 
 .view-button {
@@ -227,9 +222,9 @@ h1 {
 
 .status-label {
   display: block;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   color: var(--muted);
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .ghost-button {
@@ -237,6 +232,15 @@ h1 {
   font: inherit;
   color: var(--text);
   transition: transform 160ms ease, background 160ms ease;
+}
+
+.status-chip strong,
+.ghost-button {
+  font-size: 0.94rem;
+}
+
+.storage-tools .ghost-button {
+  flex: 1 1 0;
 }
 
 .ghost-button:hover {
@@ -655,5 +659,15 @@ h1 {
   .action-button {
     min-width: 0;
     flex: 1;
+  }
+
+  .status-row,
+  .storage-tools {
+    gap: 8px;
+  }
+
+  .status-chip strong,
+  .ghost-button {
+    font-size: 0.9rem;
   }
 }

@@ -20,13 +20,13 @@ const saveButton = document.getElementById("save-button");
 const ignoreButton = document.getElementById("ignore-button");
 const rewindButton = document.getElementById("rewind-button");
 const resetButton = document.getElementById("reset-button");
+const remainingCount = document.getElementById("remaining-count");
 const savedCount = document.getElementById("saved-count");
 const ignoredCount = document.getElementById("ignored-count");
 const viewAllButton = document.getElementById("view-all-button");
 const viewSavedButton = document.getElementById("view-saved-button");
 const viewIgnoredButton = document.getElementById("view-ignored-button");
 const actionRow = document.querySelector(".action-row");
-const resumeNote = document.getElementById("resume-note");
 const exportButton = document.getElementById("export-button");
 const importButton = document.getElementById("import-button");
 const importInput = document.getElementById("import-input");
@@ -139,38 +139,13 @@ function persistState() {
 
   localStorage.setItem(STORAGE_KEY, JSON.stringify(persistedState));
   updateCounts();
-  updateResumeNote();
   clearSearchButton.classList.toggle("is-visible", Boolean(searchQuery));
 }
 
 function updateCounts() {
+  remainingCount.textContent = String(visibleProfiles().length);
   savedCount.textContent = String(decisions.saved.length);
   ignoredCount.textContent = String(decisions.ignored.length);
-}
-
-function updateResumeNote() {
-  const reviewedCount = decisions.saved.length + decisions.ignored.length;
-  const totalCount = profiles.length;
-  const remainingCount = totalCount
-    ? Math.max(totalCount - reviewedCount, 0)
-    : 0;
-  const viewLabel =
-    currentView === "swipe"
-      ? "All Profiles"
-      : currentView === "saved"
-        ? "Saved"
-        : "Skip";
-  const searchSuffix = searchQuery
-    ? ` Search is filtering results for "${searchQuery}".`
-    : "";
-
-  if (!totalCount) {
-    resumeNote.textContent =
-      "Progress and lists stay in this browser, and you can export a backup anytime.";
-    return;
-  }
-
-  resumeNote.textContent = `You have reviewed ${reviewedCount} of ${totalCount} profiles, with ${remainingCount} left.`;
 }
 
 function sanitizeValue(value, fallback = "N/A") {
@@ -748,7 +723,6 @@ async function importState(file) {
 
 async function init() {
   updateCounts();
-  updateResumeNote();
   searchInput.value = searchQuery;
   clearSearchButton.classList.toggle("is-visible", Boolean(searchQuery));
 
@@ -762,7 +736,6 @@ async function init() {
     profiles = await response.json();
     initializeProfileOrder();
     renderCurrentView();
-    updateResumeNote();
   } catch (error) {
     deck.innerHTML = `
       <div class="profile-card empty-state">

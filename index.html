@@ -19,7 +19,6 @@
           <p class="eyebrow">Columbia University ♔ Spring 2026</p>
           <h1>Senior Scramble</h1>
           <p class="subcopy">Sort profiles with a quick save or skip.</p>
-          <p id="resume-note" class="resume-note"></p>
         </div>
 
         <div class="search-row">
@@ -52,8 +51,8 @@
             class="status-chip view-button is-active"
             type="button"
           >
-            <span class="status-label">View</span>
-            <strong>All Profiles</strong>
+            <span class="status-label">To View</span>
+            <strong id="remaining-count">0</strong>
           </button>
           <button
             id="view-saved-button"
@@ -68,17 +67,17 @@
             class="status-chip view-button"
             type="button"
           >
-            <span class="status-label">Skip</span>
+            <span class="status-label">Skipped</span>
             <strong id="ignored-count">0</strong>
           </button>
         </div>
 
         <div class="storage-tools">
           <button id="export-button" class="ghost-button" type="button">
-            Export Lists
+            Export
           </button>
           <button id="import-button" class="ghost-button" type="button">
-            Import Lists
+            Import
           </button>
           <button id="reset-button" class="ghost-button" type="button">
             Reset
