@@ -170,9 +170,7 @@ function updateResumeNote() {
     return;
   }
 
-  resumeNote.textContent =
-    `You have reviewed ${reviewedCount} of ${totalCount} profiles, with ${remainingCount} left. ` +
-    `You’ll reopen on ${viewLabel} in this browser.${searchSuffix}`;
+  resumeNote.textContent = `You have reviewed ${reviewedCount} of ${totalCount} profiles, with ${remainingCount} left.`;
 }
 
 function sanitizeValue(value, fallback = "N/A") {
@@ -490,7 +488,7 @@ function renderCollection(type) {
 
   if (!collectionProfiles.length) {
     collectionView.innerHTML = `
-      <div class="profile-card empty-state">
+      <div class="collection-empty-state empty-state">
         <div>
           <h2>${searchQuery ? "No profiles match" : "No profiles here yet"}</h2>
           <p>${
