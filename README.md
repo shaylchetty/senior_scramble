@@ -37,4 +37,5 @@ The app is fully static, so GitHub Pages works well out of the box.
 
 - `profiles.json` is publicly accessible once hosted on GitHub Pages.
 - Saved and skipped state is stored in each visitor's browser with `localStorage`.
+- Users can export and import their saved/skipped lists from the app header for a manual backup.
 - If you update `profiles.json`, the site will use the new data on refresh.

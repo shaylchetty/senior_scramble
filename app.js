@@ -1,6 +1,14 @@
 const DATA_URL = "./profiles.json";
 const SWIPE_THRESHOLD = 110;
 const STORAGE_KEY = "campus-match-decisions";
+const STORAGE_VERSION = 2;
+
+const defaultState = () => ({
+  version: STORAGE_VERSION,
+  decisions: { saved: [], ignored: [] },
+  history: [],
+  currentView: "swipe",
+});
 
 const deck = document.getElementById("card-deck");
 const collectionView = document.getElementById("collection-view");
@@ -16,28 +24,109 @@ const viewAllButton = document.getElementById("view-all-button");
 const viewSavedButton = document.getElementById("view-saved-button");
 const viewIgnoredButton = document.getElementById("view-ignored-button");
 const actionRow = document.querySelector(".action-row");
+const resumeNote = document.getElementById("resume-note");
+const exportButton = document.getElementById("export-button");
+const importButton = document.getElementById("import-button");
+const importInput = document.getElementById("import-input");
 
 let profiles = [];
-let decisions = loadDecisions();
-let history = [];
-let currentView = "swipe";
+let persistedState = loadState();
+let decisions = persistedState.decisions;
+let history = persistedState.history;
+let currentView = persistedState.currentView;
 
-function loadDecisions() {
+function normalizeDecisionState(value) {
+  const unique = Array.isArray(value) ? [...new Set(value.filter(Boolean).map(String))] : [];
+  return unique;
+}
+
+function normalizeHistory(value) {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+
+  return value
+    .filter((entry) => entry && typeof entry === "object" && entry.uni && entry.direction)
+    .map((entry) => ({ uni: String(entry.uni), direction: entry.direction === "save" ? "save" : "ignore" }));
+}
+
+function normalizeView(value) {
+  return ["swipe", "saved", "ignored"].includes(value) ? value : "swipe";
+}
+
+function loadState() {
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY)) ?? { saved: [], ignored: [] };
+    const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY));
+
+    if (!parsed) {
+      return defaultState();
+    }
+
+    if (Array.isArray(parsed.saved) || Array.isArray(parsed.ignored)) {
+      return {
+        version: STORAGE_VERSION,
+        decisions: {
+          saved: normalizeDecisionState(parsed.saved),
+          ignored: normalizeDecisionState(parsed.ignored),
+        },
+        history: [],
+        currentView: "swipe",
+      };
+    }
+
+    return {
+      version: STORAGE_VERSION,
+      decisions: {
+        saved: normalizeDecisionState(parsed.decisions?.saved),
+        ignored: normalizeDecisionState(parsed.decisions?.ignored),
+      },
+      history: normalizeHistory(parsed.history),
+      currentView: normalizeView(parsed.currentView),
+    };
   } catch {
-    return { saved: [], ignored: [] };
+    return defaultState();
   }
 }
 
-function persistDecisions() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(decisions));
+function persistState() {
+  persistedState = {
+    version: STORAGE_VERSION,
+    decisions: {
+      saved: normalizeDecisionState(decisions.saved),
+      ignored: normalizeDecisionState(decisions.ignored),
+    },
+    history: normalizeHistory(history),
+    currentView: normalizeView(currentView),
+  };
+
+  decisions = persistedState.decisions;
+  history = persistedState.history;
+  currentView = persistedState.currentView;
+
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(persistedState));
   updateCounts();
+  updateResumeNote();
 }
 
 function updateCounts() {
   savedCount.textContent = String(decisions.saved.length);
   ignoredCount.textContent = String(decisions.ignored.length);
+}
+
+function updateResumeNote() {
+  const reviewedCount = decisions.saved.length + decisions.ignored.length;
+  const totalCount = profiles.length;
+  const remainingCount = totalCount ? Math.max(totalCount - reviewedCount, 0) : 0;
+  const viewLabel = currentView === "swipe" ? "All Profiles" : currentView === "saved" ? "Saved" : "Skip";
+
+  if (!totalCount) {
+    resumeNote.textContent = "Progress and lists stay in this browser, and you can export a backup anytime.";
+    return;
+  }
+
+  resumeNote.textContent =
+    `You have reviewed ${reviewedCount} of ${totalCount} profiles, with ${remainingCount} left. ` +
+    `You’ll reopen on ${viewLabel} in this browser.`;
 }
 
 function sanitizeValue(value, fallback = "N/A") {
@@ -207,7 +296,7 @@ function moveProfileToGroup(profile, targetGroup) {
   decisions[targetGroup] = decisions[targetGroup].filter((uni) => uni !== profile.uni);
   decisions[targetGroup].push(profile.uni);
 
-  persistDecisions();
+  persistState();
   renderCurrentView();
 }
 
@@ -309,6 +398,7 @@ function renderCurrentView() {
 
 function setView(view) {
   currentView = view;
+  persistState();
   renderCurrentView();
 }
 
@@ -321,7 +411,7 @@ function commitDecision(profile, direction) {
     decisions.ignored.push(profile.uni);
   }
 
-  persistDecisions();
+  persistState();
   renderCurrentView();
 }
 
@@ -452,12 +542,55 @@ function rewindLastDecision() {
     decisions.ignored = decisions.ignored.filter((uni) => uni !== lastDecision.uni);
   }
 
-  persistDecisions();
+  persistState();
+  renderCurrentView();
+}
+
+function exportState() {
+  const payload = {
+    version: STORAGE_VERSION,
+    exportedAt: new Date().toISOString(),
+    decisions,
+    history,
+    currentView,
+  };
+
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  const stamp = new Date().toISOString().slice(0, 10);
+
+  link.href = url;
+  link.download = `senior-scramble-backup-${stamp}.json`;
+  document.body.append(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
+
+async function importState(file) {
+  const text = await file.text();
+  const parsed = JSON.parse(text);
+  const nextState = {
+    version: STORAGE_VERSION,
+    decisions: {
+      saved: normalizeDecisionState(parsed.decisions?.saved ?? parsed.saved),
+      ignored: normalizeDecisionState(parsed.decisions?.ignored ?? parsed.ignored),
+    },
+    history: normalizeHistory(parsed.history),
+    currentView: normalizeView(parsed.currentView),
+  };
+
+  decisions = nextState.decisions;
+  history = nextState.history;
+  currentView = nextState.currentView;
+  persistState();
   renderCurrentView();
 }
 
 async function init() {
   updateCounts();
+  updateResumeNote();
 
   try {
     const response = await fetch(DATA_URL);
@@ -468,6 +601,7 @@ async function init() {
 
     profiles = await response.json();
     renderCurrentView();
+    updateResumeNote();
   } catch (error) {
     deck.innerHTML = `
       <div class="profile-card empty-state">
@@ -486,10 +620,28 @@ rewindButton.addEventListener("click", rewindLastDecision);
 viewAllButton.addEventListener("click", () => setView("swipe"));
 viewSavedButton.addEventListener("click", () => setView("saved"));
 viewIgnoredButton.addEventListener("click", () => setView("ignored"));
+exportButton.addEventListener("click", exportState);
+importButton.addEventListener("click", () => importInput.click());
+importInput.addEventListener("change", async (event) => {
+  const file = event.target.files?.[0];
+
+  if (!file) {
+    return;
+  }
+
+  try {
+    await importState(file);
+  } catch {
+    window.alert("That backup file could not be imported.");
+  } finally {
+    importInput.value = "";
+  }
+});
 resetButton.addEventListener("click", () => {
   decisions = { saved: [], ignored: [] };
   history = [];
-  persistDecisions();
+  currentView = "swipe";
+  persistState();
   setView("swipe");
 });
 
