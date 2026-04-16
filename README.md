@@ -47,7 +47,13 @@ This repo includes a local macOS automation setup in `automation/`:
 - `automation/run_profile_update.sh`: runs the scraper, copies the generated `profiles.json` into this repo, and commits/pushes only when the file changed
 - `automation/com.shaylchetty.senior-scramble-update.plist`: `launchd` agent that runs at login and then checks every 2 hours
 
-The runner only performs one successful update per day. It stores runtime logs and its last-run stamp in `.automation-state/`, which is ignored by git.
+The runner currently:
+
+- can perform up to two successful runs per day: once in the morning window and once in the afternoon/evening window
+- runs at login and then checks every 2 hours, so startup is still enough to trigger it
+- automatically disables itself on or after `2026-05-01`
+
+It stores runtime logs and its last-run slot in `.automation-state/`, which is ignored by git.
 
 Expected local paths:
 
@@ -64,4 +70,4 @@ launchctl unload ~/Library/LaunchAgents/com.shaylchetty.senior-scramble-update.p
 launchctl load ~/Library/LaunchAgents/com.shaylchetty.senior-scramble-update.plist
 ```
 
-The agent runs when you log in and then periodically after that, but the script exits immediately if it already completed an update that day.
+The agent runs when you log in and then periodically after that, but the script exits immediately if it already completed its run for the current morning/afternoon window.

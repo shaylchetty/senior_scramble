@@ -7,8 +7,10 @@ SCRAPER_SCRIPT="/Users/shaylchetty/Dev/scramble/new.py"
 SCRAPER_OUTPUT_JSON="/Users/shaylchetty/Dev/scramble/profiles.json"
 TARGET_JSON="$REPO_DIR/profiles.json"
 STATE_DIR="$REPO_DIR/.automation-state"
-LAST_RUN_FILE="$STATE_DIR/last_successful_run.txt"
+LAST_RUN_SLOT_FILE="$STATE_DIR/last_successful_run_slot.txt"
 LOG_FILE="$STATE_DIR/update.log"
+LAUNCH_AGENT_PATH="$HOME/Library/LaunchAgents/com.shaylchetty.senior-scramble-update.plist"
+STOP_ON_OR_AFTER="2026-05-01"
 
 mkdir -p "$STATE_DIR"
 
@@ -21,9 +23,24 @@ log() {
 }
 
 TODAY="$(date +%F)"
+CURRENT_HOUR="$(date +%H)"
+RUN_SLOT="am"
 
-if [[ -f "$LAST_RUN_FILE" ]] && [[ "$(cat "$LAST_RUN_FILE")" == "$TODAY" ]]; then
-  log "Already updated today. Exiting."
+if (( 10#$CURRENT_HOUR >= 12 )); then
+  RUN_SLOT="pm"
+fi
+
+CURRENT_RUN_MARKER="$TODAY-$RUN_SLOT"
+
+if [[ "$TODAY" > "$STOP_ON_OR_AFTER" || "$TODAY" == "$STOP_ON_OR_AFTER" ]]; then
+  log "Stop date reached. Disabling launch agent."
+  launchctl unload "$LAUNCH_AGENT_PATH" 2>/dev/null || true
+  rm -f "$LAUNCH_AGENT_PATH"
+  exit 0
+fi
+
+if [[ -f "$LAST_RUN_SLOT_FILE" ]] && [[ "$(cat "$LAST_RUN_SLOT_FILE")" == "$CURRENT_RUN_MARKER" ]]; then
+  log "Already updated during the $RUN_SLOT window today. Exiting."
   exit 0
 fi
 
@@ -50,7 +67,7 @@ fi
 
 if cmp -s "$SCRAPER_OUTPUT_JSON" "$TARGET_JSON"; then
   log "profiles.json already up to date. No git changes needed."
-  echo "$TODAY" > "$LAST_RUN_FILE"
+  echo "$CURRENT_RUN_MARKER" > "$LAST_RUN_SLOT_FILE"
   exit 0
 fi
 
@@ -61,7 +78,7 @@ git add profiles.json
 
 if git diff --cached --quiet -- profiles.json; then
   log "No staged diff after copy. Exiting."
-  echo "$TODAY" > "$LAST_RUN_FILE"
+  echo "$CURRENT_RUN_MARKER" > "$LAST_RUN_SLOT_FILE"
   exit 0
 fi
 
@@ -72,5 +89,5 @@ git commit -m "$COMMIT_MESSAGE"
 log "Pushing to origin."
 git push origin HEAD
 
-echo "$TODAY" > "$LAST_RUN_FILE"
+echo "$CURRENT_RUN_MARKER" > "$LAST_RUN_SLOT_FILE"
 log "Automation finished successfully."
