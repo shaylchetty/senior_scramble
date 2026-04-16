@@ -60,9 +60,7 @@ body::before {
 
 .app-panel {
   padding: 28px;
-  position: sticky;
-  top: 16px;
-  z-index: 10;
+  position: static;
   margin-bottom: 8px;
 }
 
@@ -462,19 +460,28 @@ h1 {
   display: inline-flex;
   position: relative;
   z-index: 4;
-  width: fit-content;
+  max-width: min(46vw, 240px);
   padding: 8px 12px;
   border-radius: 999px;
   background: rgba(18, 14, 10, 0.26);
   backdrop-filter: blur(8px);
   pointer-events: auto;
   text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: clamp(0.8rem, 1.8vw, 0.95rem);
   transition: background 160ms ease, transform 160ms ease;
 }
 
 .profile-instagram:hover {
   background: rgba(18, 14, 10, 0.38);
   transform: translateY(-1px);
+}
+
+.profile-instagram[hidden],
+.profile-instagram:empty {
+  display: none !important;
 }
 
 .detail-grid {
@@ -616,10 +623,6 @@ h1 {
 @media (max-width: 940px) {
   .app-shell {
     padding: 18px;
-  }
-
-  .app-panel {
-    position: static;
   }
 
   .card-deck {

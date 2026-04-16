@@ -310,10 +310,12 @@ function wireInstagramLink(link, handle) {
     link.hidden = true;
     link.removeAttribute("href");
     link.textContent = "";
+    link.setAttribute("aria-hidden", "true");
     return;
   }
 
   link.hidden = false;
+  link.removeAttribute("aria-hidden");
   link.href = `https://www.instagram.com/${handle}/`;
   link.textContent = `@${handle}`;
 }
