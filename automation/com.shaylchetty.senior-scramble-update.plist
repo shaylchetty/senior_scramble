@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>com.shaylchetty.senior-scramble-update</string>
+
+    <key>ProgramArguments</key>
+    <array>
+      <string>/bin/zsh</string>
+      <string>/Users/shaylchetty/Documents/New project/automation/run_profile_update.sh</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/shaylchetty/Documents/New project</string>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>StartInterval</key>
+    <integer>7200</integer>
+
+    <key>StandardOutPath</key>
+    <string>/Users/shaylchetty/Documents/New project/.automation-state/launchd.out.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/shaylchetty/Documents/New project/.automation-state/launchd.err.log</string>
+  </dict>
+</plist>
