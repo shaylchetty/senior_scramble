@@ -307,17 +307,15 @@ function setOptionalField(card, selector, wrapperSelector, value) {
 
 function wireInstagramLink(link, handle) {
   if (!handle) {
-    link.hidden = true;
     link.removeAttribute("href");
-    link.textContent = "";
+    link.classList.add("is-plain");
     link.setAttribute("aria-hidden", "true");
     return;
   }
 
-  link.hidden = false;
+  link.classList.remove("is-plain");
   link.removeAttribute("aria-hidden");
   link.href = `https://www.instagram.com/${handle}/`;
-  link.textContent = `@${handle}`;
 }
 
 function applyImageState(image, profile) {
@@ -353,15 +351,14 @@ function populateProfileFields(card, profile) {
   const bio = sanitizeValue(profile.bio, "");
   const quote = sanitizeValue(profile.quote, "");
   const instagramHandle = normalizeInstagramHandle(profile.instagram);
-  const instagramEl = card.querySelector(".profile-instagram");
+  const nameLink = card.querySelector(".profile-name-link");
 
-  card.querySelector(".profile-name").textContent = sanitizeValue(
-    profile.instagram,
-    profile.uni,
-  );
+  nameLink.textContent = instagramHandle
+    ? `@${instagramHandle}`
+    : sanitizeValue(profile.instagram, profile.uni);
   card.querySelector(".profile-school").textContent =
     composeSchoolLine(profile);
-  wireInstagramLink(instagramEl, instagramHandle);
+  wireInstagramLink(nameLink, instagramHandle);
 
   const bioEl = card.querySelector(".profile-bio");
   if (!bio) {
@@ -570,7 +567,7 @@ function attachSwipe(card, profile) {
   let deltaX = 0;
   let deltaY = 0;
   let dragging = false;
-  const instagramLink = card.querySelector(".profile-instagram");
+  const instagramLink = card.querySelector(".profile-name-link");
 
   if (instagramLink) {
     instagramLink.addEventListener("pointerdown", (event) => {
@@ -592,7 +589,7 @@ function attachSwipe(card, profile) {
   }
 
   const onPointerDown = (event) => {
-    if (event.target.closest(".profile-instagram")) {
+    if (event.target.closest(".profile-name-link")) {
       return;
     }
 
