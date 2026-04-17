@@ -66,19 +66,21 @@ fi
 log "Running scraper."
 "$SCRAPER_PYTHON" "$SCRAPER_SCRIPT"
 
-if [[ ! -f "$SCRAPER_OUTPUT_JSON" ]]; then
-  log "Expected scraper output not found at $SCRAPER_OUTPUT_JSON"
+if [[ -f "$SCRAPER_OUTPUT_JSON" ]] && [[ "$SCRAPER_OUTPUT_JSON" != "$TARGET_JSON" ]]; then
+  if cmp -s "$SCRAPER_OUTPUT_JSON" "$TARGET_JSON"; then
+    log "profiles.json already up to date. No git changes needed."
+    echo "$CURRENT_RUN_MARKER" > "$LAST_RUN_SLOT_FILE"
+    exit 0
+  fi
+
+  log "Copying fresh profiles.json into repo."
+  cp "$SCRAPER_OUTPUT_JSON" "$TARGET_JSON"
+elif [[ -f "$TARGET_JSON" ]]; then
+  log "Scraper wrote profiles.json directly into the repo."
+else
+  log "Could not find scraper output at either $SCRAPER_OUTPUT_JSON or $TARGET_JSON"
   exit 1
 fi
-
-if cmp -s "$SCRAPER_OUTPUT_JSON" "$TARGET_JSON"; then
-  log "profiles.json already up to date. No git changes needed."
-  echo "$CURRENT_RUN_MARKER" > "$LAST_RUN_SLOT_FILE"
-  exit 0
-fi
-
-log "Copying fresh profiles.json into repo."
-cp "$SCRAPER_OUTPUT_JSON" "$TARGET_JSON"
 
 git add profiles.json
 
