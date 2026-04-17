@@ -4,6 +4,7 @@ set -euo pipefail
 
 REPO_DIR="/Users/shaylchetty/Documents/New project"
 SCRAPER_SCRIPT="/Users/shaylchetty/Dev/scramble/new.py"
+SCRAPER_PYTHON="/Users/shaylchetty/Dev/scramble/venv/bin/python"
 SCRAPER_OUTPUT_JSON="/Users/shaylchetty/Dev/scramble/profiles.json"
 TARGET_JSON="$REPO_DIR/profiles.json"
 STATE_DIR="$REPO_DIR/.automation-state"
@@ -49,6 +50,11 @@ if [[ ! -f "$SCRAPER_SCRIPT" ]]; then
   exit 1
 fi
 
+if [[ ! -x "$SCRAPER_PYTHON" ]]; then
+  log "Scraper Python interpreter not found or not executable at $SCRAPER_PYTHON"
+  exit 1
+fi
+
 cd "$REPO_DIR"
 
 OTHER_CHANGES="$(git status --porcelain | grep -vE '^(.. )?profiles\.json$' || true)"
@@ -58,7 +64,7 @@ if [[ -n "$OTHER_CHANGES" ]]; then
 fi
 
 log "Running scraper."
-python3 "$SCRAPER_SCRIPT"
+"$SCRAPER_PYTHON" "$SCRAPER_SCRIPT"
 
 if [[ ! -f "$SCRAPER_OUTPUT_JSON" ]]; then
   log "Expected scraper output not found at $SCRAPER_OUTPUT_JSON"
