@@ -567,6 +567,7 @@ function attachSwipe(card, profile) {
   let deltaX = 0;
   let deltaY = 0;
   let dragging = false;
+  let activePointerId = null;
   const instagramLink = card.querySelector(".profile-name-link");
 
   if (instagramLink) {
@@ -589,21 +590,31 @@ function attachSwipe(card, profile) {
   }
 
   const onPointerDown = (event) => {
+    if (!event.isPrimary || event.button !== 0) {
+      return;
+    }
+
     if (event.target.closest(".profile-name-link")) {
       return;
     }
 
     dragging = true;
+    activePointerId = event.pointerId;
     startX = event.clientX;
     startY = event.clientY;
     deltaX = 0;
     deltaY = 0;
     card.classList.add("is-dragging");
-    card.setPointerCapture(event.pointerId);
+
+    try {
+      card.setPointerCapture(event.pointerId);
+    } catch {
+      activePointerId = event.pointerId;
+    }
   };
 
   const onPointerMove = (event) => {
-    if (!dragging) {
+    if (!dragging || event.pointerId !== activePointerId) {
       return;
     }
 
@@ -615,14 +626,31 @@ function attachSwipe(card, profile) {
     updateIndicators(card, deltaX);
   };
 
+  const resetDragState = () => {
+    dragging = false;
+    activePointerId = null;
+    card.classList.remove("is-dragging");
+  };
+
+  const resetCardPosition = () => {
+    card.style.transform = "";
+    updateIndicators(card, 0);
+  };
+
   const onPointerUp = (event) => {
-    if (!dragging) {
+    if (!dragging || event.pointerId !== activePointerId) {
       return;
     }
 
-    dragging = false;
-    card.classList.remove("is-dragging");
-    card.releasePointerCapture(event.pointerId);
+    resetDragState();
+
+    try {
+      if (card.hasPointerCapture(event.pointerId)) {
+        card.releasePointerCapture(event.pointerId);
+      }
+    } catch {
+      // Ignore capture-release edge cases and just settle the card visually.
+    }
 
     if (deltaX > SWIPE_THRESHOLD) {
       animateOff(card, profile, "save");
@@ -634,14 +662,23 @@ function attachSwipe(card, profile) {
       return;
     }
 
-    card.style.transform = "";
-    updateIndicators(card, 0);
+    resetCardPosition();
+  };
+
+  const onLostPointerCapture = () => {
+    if (!dragging) {
+      return;
+    }
+
+    resetDragState();
+    resetCardPosition();
   };
 
   card.addEventListener("pointerdown", onPointerDown);
   card.addEventListener("pointermove", onPointerMove);
   card.addEventListener("pointerup", onPointerUp);
   card.addEventListener("pointercancel", onPointerUp);
+  card.addEventListener("lostpointercapture", onLostPointerCapture);
 }
 
 function triggerTopCard(direction) {
