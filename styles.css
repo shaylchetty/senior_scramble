@@ -527,15 +527,15 @@ h1 {
 }
 
 .swipe-indicator-left {
-  left: 24px;
+  right: 24px;
   color: #ffd5d5;
-  transform: rotate(-10deg);
+  transform: rotate(10deg);
 }
 
 .swipe-indicator-right {
-  right: 24px;
+  left: 24px;
   color: #dbffe4;
-  transform: rotate(10deg);
+  transform: rotate(-10deg);
 }
 
 .action-row {

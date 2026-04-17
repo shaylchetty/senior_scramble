@@ -236,7 +236,7 @@ function initializeProfileOrder() {
   }
 
   if (missingUnis.length) {
-    profileOrder = [...cleanedExisting, ...shuffleList(missingUnis)];
+    profileOrder = [...shuffleList(missingUnis), ...cleanedExisting];
     persistState();
     return;
   }
