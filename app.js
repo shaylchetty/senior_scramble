@@ -1,5 +1,7 @@
 const DATA_URL = "./profiles.json";
 const SWIPE_THRESHOLD = 110;
+const SWIPE_RELEASE_THRESHOLD = 10;
+const SWIPE_OFFSCREEN_DURATION_MS = 280;
 const STORAGE_KEY = "campus-match-decisions";
 const STORAGE_VERSION = 2;
 
@@ -544,12 +546,13 @@ function commitDecision(profile, direction) {
 function animateOff(card, profile, direction) {
   const finalX = direction === "save" ? window.innerWidth : -window.innerWidth;
   const rotation = direction === "save" ? 18 : -18;
+  card.style.transition = `transform ${SWIPE_OFFSCREEN_DURATION_MS}ms cubic-bezier(0.22, 1, 0.36, 1), opacity ${SWIPE_OFFSCREEN_DURATION_MS}ms ease`;
   card.style.transform = `translate(${finalX}px, -20px) rotate(${rotation}deg)`;
   card.style.opacity = "0";
 
   window.setTimeout(() => {
     commitDecision(profile, direction);
-  }, 180);
+  }, SWIPE_OFFSCREEN_DURATION_MS);
 }
 
 function updateIndicators(card, deltaX) {
@@ -659,6 +662,13 @@ function attachSwipe(card, profile) {
 
     if (deltaX < -SWIPE_THRESHOLD) {
       animateOff(card, profile, "ignore");
+      return;
+    }
+
+    // If the user actually dragged the card sideways, commit the swipe on release
+    // instead of snapping back, while still allowing simple taps to do nothing.
+    if (Math.abs(deltaX) >= SWIPE_RELEASE_THRESHOLD && Math.abs(deltaX) > Math.abs(deltaY) * 0.75) {
+      animateOff(card, profile, deltaX > 0 ? "save" : "ignore");
       return;
     }
 
