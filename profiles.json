@@ -47,7 +47,7 @@
   {
     "uni": "aan2161",
     "instagram": "@_anorain",
-    "photo": "aan2161_1776119284922_IMG_3420.jpeg",
+    "photo": "aan2161_1776487878036_IMG_7107.jpeg",
     "school": "SEAS",
     "major": "Electrical Engineering",
     "minor": "",
@@ -56,7 +56,7 @@
     "zodiac": "Sagittarius",
     "status": "active",
     "sexual_orientation": "Straight",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/aan2161_1776119284922_IMG_3420.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/aan2161_1776487878036_IMG_7107.jpeg",
     "created_date": null
   },
   {
@@ -175,14 +175,14 @@
     "quote": "",
     "zodiac": "",
     "status": "active",
-    "sexual_orientation": "",
+    "sexual_orientation": "gay",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ac5185_1776030653420_42FB467F-6433-418B-B6B3-54B71DA4A7E1.JPG",
     "created_date": null
   },
   {
     "uni": "ac5186",
     "instagram": "antoniacasariego",
-    "photo": null,
+    "photo": "ac5186_1776547294166_7D34AD43-83BE-49B8-990F-88ED2B487195.jpeg",
     "school": "CC",
     "major": "Computer Science",
     "minor": "Visual Arts",
@@ -191,7 +191,7 @@
     "zodiac": "Gemini",
     "status": "active",
     "sexual_orientation": "",
-    "image_url": null,
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ac5186_1776547294166_7D34AD43-83BE-49B8-990F-88ED2B487195.jpeg",
     "created_date": null
   },
   {
@@ -207,6 +207,21 @@
     "status": "active",
     "sexual_orientation": "",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ac5187_1776309651251_IMG_9044.png",
+    "created_date": null
+  },
+  {
+    "uni": "ac5190",
+    "instagram": "@Anyac.h",
+    "photo": "ac5190_1776645008698_Facetune_21-03-2026-15-35-46.jpeg",
+    "school": "CC",
+    "major": "American Studies",
+    "minor": "",
+    "bio": null,
+    "quote": "",
+    "zodiac": "Pisces",
+    "status": "active",
+    "sexual_orientation": "straight",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ac5190_1776645008698_Facetune_21-03-2026-15-35-46.jpeg",
     "created_date": null
   },
   {
@@ -270,6 +285,21 @@
     "created_date": null
   },
   {
+    "uni": "acn2150",
+    "instagram": "@aniket.naravane",
+    "photo": "acn2150_1776480090193_HSO Senior Pictures - Google Drive.jpeg",
+    "school": "CC",
+    "major": "Biochemistry",
+    "minor": "",
+    "bio": null,
+    "quote": "",
+    "zodiac": "Virgo",
+    "status": "active",
+    "sexual_orientation": "straight",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/acn2150_1776480090193_HSO Senior Pictures - Google Drive.jpeg",
+    "created_date": null
+  },
+  {
     "uni": "ad4077",
     "instagram": "",
     "photo": "ad4077_1776048240185_IMG_6303.jpeg",
@@ -327,6 +357,21 @@
     "status": "active",
     "sexual_orientation": "straight",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/adr2183_1775842694090_IMG_0663.jpeg",
+    "created_date": null
+  },
+  {
+    "uni": "adt2155",
+    "instagram": "ardi.tay",
+    "photo": "adt2155_1776648182995_IMG_3632.jpeg",
+    "school": "CC",
+    "major": "Architecture",
+    "minor": "",
+    "bio": null,
+    "quote": "",
+    "zodiac": "Sagittarius",
+    "status": "active",
+    "sexual_orientation": "Bisexual",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/adt2155_1776648182995_IMG_3632.jpeg",
     "created_date": null
   },
   {
@@ -435,6 +480,21 @@
     "created_date": null
   },
   {
+    "uni": "afo2109",
+    "instagram": null,
+    "photo": null,
+    "school": null,
+    "major": null,
+    "minor": null,
+    "bio": null,
+    "quote": null,
+    "zodiac": null,
+    "status": "active",
+    "sexual_orientation": null,
+    "image_url": null,
+    "created_date": null
+  },
+  {
     "uni": "ag4156",
     "instagram": "aleena._04",
     "photo": "ag4156_1776092033740_SAM_2799.jpeg",
@@ -452,7 +512,7 @@
   {
     "uni": "ag4647",
     "instagram": "ash_grc14",
-    "photo": "ag4647_1775952998984_IMG_5928.jpeg",
+    "photo": "ag4647_1776469302805_IMG_1949.jpeg",
     "school": "SEAS",
     "major": "cs",
     "minor": "math",
@@ -461,7 +521,7 @@
     "zodiac": "Aries",
     "status": "active",
     "sexual_orientation": "straight",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ag4647_1775952998984_IMG_5928.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ag4647_1776469302805_IMG_1949.jpeg",
     "created_date": null
   },
   {
@@ -490,7 +550,7 @@
     "quote": "",
     "zodiac": "",
     "status": "active",
-    "sexual_orientation": "",
+    "sexual_orientation": "straight",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/agk2155_1775803401302_IMG_6478.png",
     "created_date": null
   },
@@ -537,6 +597,21 @@
     "status": "active",
     "sexual_orientation": "straight",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/agr2164_1775808760329_Me_at_mountain.jpg",
+    "created_date": null
+  },
+  {
+    "uni": "ah4016",
+    "instagram": null,
+    "photo": null,
+    "school": null,
+    "major": null,
+    "minor": null,
+    "bio": null,
+    "quote": null,
+    "zodiac": null,
+    "status": "active",
+    "sexual_orientation": null,
+    "image_url": null,
     "created_date": null
   },
   {
@@ -602,7 +677,7 @@
   {
     "uni": "aia2137",
     "instagram": "ameliaalemanf",
-    "photo": "aia2137_1775839555323_IMG_7479.jpeg",
+    "photo": "aia2137_1776462578628_IMG_2872.jpeg",
     "school": "CC",
     "major": "Economics-Political Science",
     "minor": "Psychology",
@@ -611,7 +686,7 @@
     "zodiac": "Aquarius",
     "status": "active",
     "sexual_orientation": "Straight",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/aia2137_1775839555323_IMG_7479.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/aia2137_1776462578628_IMG_2872.jpeg",
     "created_date": null
   },
   {
@@ -664,7 +739,7 @@
     "instagram": "@a_a_ron_l1",
     "photo": "ajl2321_1776008951482_IMG_9306.jpeg",
     "school": "SEAS",
-    "major": "Mechanical Engineering",
+    "major": "Mech Eng",
     "minor": "",
     "bio": null,
     "quote": "",
@@ -737,7 +812,7 @@
   {
     "uni": "ak4905",
     "instagram": "@andomedia",
-    "photo": "ak4905_1776224703109_IMG_9823.jpeg",
+    "photo": "ak4905_1776455790318_Screenshot 2026-04-17 at 3.55.07 PM.png",
     "school": "SEAS",
     "major": "electrical engineering",
     "minor": "computer science",
@@ -746,7 +821,7 @@
     "zodiac": "",
     "status": "active",
     "sexual_orientation": "straight",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ak4905_1776224703109_IMG_9823.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ak4905_1776455790318_Screenshot 2026-04-17 at 3.55.07 PM.png",
     "created_date": null
   },
   {
@@ -781,8 +856,8 @@
   },
   {
     "uni": "aks2278",
-    "instagram": "aliviaswearingen ",
-    "photo": "aks2278_1776395178309_IMG_6465.jpeg",
+    "instagram": "aliviaswearingen",
+    "photo": "aks2278_1776462759743_IMG_6465.jpeg",
     "school": "CC",
     "major": "Biology",
     "minor": "",
@@ -791,7 +866,7 @@
     "zodiac": "Leo",
     "status": "active",
     "sexual_orientation": "Straight",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/aks2278_1776395178309_IMG_6465.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/aks2278_1776462759743_IMG_6465.jpeg",
     "created_date": null
   },
   {
@@ -827,7 +902,7 @@
   {
     "uni": "al4376",
     "instagram": "@amy.xy.lee",
-    "photo": "al4376_1775923718953_IMG_5746.jpeg",
+    "photo": "al4376_1776554646063_IMG_6238.jpeg",
     "school": "",
     "major": "Neuroscience and Behaviour",
     "minor": "",
@@ -836,7 +911,7 @@
     "zodiac": "",
     "status": "active",
     "sexual_orientation": "",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/al4376_1775923718953_IMG_5746.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/al4376_1776554646063_IMG_6238.jpeg",
     "created_date": null
   },
   {
@@ -882,6 +957,21 @@
     "status": "active",
     "sexual_orientation": "Straight ",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/alm2335_1776049330689_IMG_1286.jpeg",
+    "created_date": null
+  },
+  {
+    "uni": "alp2258",
+    "instagram": "@pushner",
+    "photo": "alp2258_1776459023665_Me.jpeg",
+    "school": "CC",
+    "major": "Applied Math",
+    "minor": "",
+    "bio": null,
+    "quote": "",
+    "zodiac": "Capricorn",
+    "status": "active",
+    "sexual_orientation": "",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/alp2258_1776459023665_Me.jpeg",
     "created_date": null
   },
   {
@@ -1021,7 +1111,7 @@
   },
   {
     "uni": "amw2303",
-    "instagram": "",
+    "instagram": "anuthmiwaas",
     "photo": "amw2303_1775845143462_IMG_0747.jpeg",
     "school": "Barnard",
     "major": "Neuroscience ",
@@ -1200,6 +1290,21 @@
     "created_date": null
   },
   {
+    "uni": "arc2279",
+    "instagram": "amandarechapa",
+    "photo": "arc2279_1776560776377_Facetune_14-04-2024-18-39-59.jpeg",
+    "school": "CC",
+    "major": "Sociology, Ethnicity and Race Studies",
+    "minor": "",
+    "bio": null,
+    "quote": "",
+    "zodiac": "Cancer",
+    "status": "active",
+    "sexual_orientation": "bi ",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/arc2279_1776560776377_Facetune_14-04-2024-18-39-59.jpeg",
+    "created_date": null
+  },
+  {
     "uni": "arn2152",
     "instagram": "",
     "photo": "arn2152_1775948893861_IMG_4268.jpeg",
@@ -1257,6 +1362,21 @@
     "status": "active",
     "sexual_orientation": "Heterosexual ",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/as7169_1775958071022_IMG_4288.jpeg",
+    "created_date": null
+  },
+  {
+    "uni": "asc2258",
+    "instagram": "@apurvaac_",
+    "photo": "asc2258_1776566889935_IMG_8124.jpeg",
+    "school": "Barnard",
+    "major": "Economics",
+    "minor": "Political Science",
+    "bio": null,
+    "quote": "",
+    "zodiac": "Virgo",
+    "status": "active",
+    "sexual_orientation": "",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/asc2258_1776566889935_IMG_8124.jpeg",
     "created_date": null
   },
   {
@@ -1532,7 +1652,7 @@
   {
     "uni": "bes2178",
     "instagram": "bensommer111",
-    "photo": "bes2178_1775933625536_IMG_0373.jpeg",
+    "photo": "bes2178_1776613075438_0K0A5804.jpeg",
     "school": "",
     "major": "Econ Philosophy ",
     "minor": "",
@@ -1541,7 +1661,7 @@
     "zodiac": "Scorpio",
     "status": "active",
     "sexual_orientation": "",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/bes2178_1775933625536_IMG_0373.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/bes2178_1776613075438_0K0A5804.jpeg",
     "created_date": null
   },
   {
@@ -1557,6 +1677,21 @@
     "status": "active",
     "sexual_orientation": "straight",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/bg2782_1776309837917_IMG_3301.jpeg",
+    "created_date": null
+  },
+  {
+    "uni": "bh2850",
+    "instagram": "@bogdanhamilton",
+    "photo": "bh2850_1776613822011_862B4A25-D080-41C9-A2C4-4ED6BCC3FDDF.jpeg",
+    "school": "CC",
+    "major": "Financial Econ",
+    "minor": "",
+    "bio": null,
+    "quote": "",
+    "zodiac": "",
+    "status": "active",
+    "sexual_orientation": "",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/bh2850_1776613822011_862B4A25-D080-41C9-A2C4-4ED6BCC3FDDF.jpeg",
     "created_date": null
   },
   {
@@ -1632,21 +1767,6 @@
     "status": "active",
     "sexual_orientation": "",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/bmn2124_1775920775041_7DB7FEA5-D12E-4943-BB03-253F5AE580A8.jpeg",
-    "created_date": null
-  },
-  {
-    "uni": "bnc2118",
-    "instagram": null,
-    "photo": null,
-    "school": null,
-    "major": null,
-    "minor": null,
-    "bio": null,
-    "quote": null,
-    "zodiac": null,
-    "status": "active",
-    "sexual_orientation": null,
-    "image_url": null,
     "created_date": null
   },
   {
@@ -1755,6 +1875,21 @@
     "created_date": null
   },
   {
+    "uni": "btp2109",
+    "instagram": "@brandon.pae",
+    "photo": "btp2109_1776565558613_Columba_Grad_Photo.JPG",
+    "school": "SEAS",
+    "major": "CS",
+    "minor": "",
+    "bio": null,
+    "quote": "",
+    "zodiac": "",
+    "status": "active",
+    "sexual_orientation": "",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/btp2109_1776565558613_Columba_Grad_Photo.JPG",
+    "created_date": null
+  },
+  {
     "uni": "btr2119",
     "instagram": "biftu.regaa",
     "photo": "btr2119_1775925663716_IMG_9120.jpeg",
@@ -1785,6 +1920,21 @@
     "created_date": null
   },
   {
+    "uni": "by2372",
+    "instagram": "",
+    "photo": "by2372_1776487000815_IMG_8518.jpeg",
+    "school": "",
+    "major": "Fin Econ",
+    "minor": "Music/Business Management",
+    "bio": null,
+    "quote": "",
+    "zodiac": "Cancer",
+    "status": "active",
+    "sexual_orientation": "Straight",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/by2372_1776487000815_IMG_8518.jpeg",
+    "created_date": null
+  },
+  {
     "uni": "cao2172",
     "instagram": "Chase_on_the_bay",
     "photo": "cao2172_1776363707749_IMG_9297.jpeg",
@@ -1800,33 +1950,18 @@
     "created_date": null
   },
   {
-    "uni": "cas2391",
-    "instagram": "Cvrlossxx",
-    "photo": "cas2391_1776390574095_IMG_6395.jpeg",
-    "school": "CC",
-    "major": "Mathematics-Statistics",
-    "minor": "Computer Science",
-    "bio": null,
-    "quote": "La que no es puta no disfruta ",
-    "zodiac": "Taurus",
-    "status": "active",
-    "sexual_orientation": "Gay",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/cas2391_1776390574095_IMG_6395.jpeg",
-    "created_date": null
-  },
-  {
     "uni": "caw2236",
-    "instagram": null,
-    "photo": null,
-    "school": null,
-    "major": null,
-    "minor": null,
+    "instagram": "@charlotteeweinsteinn",
+    "photo": "caw2236_1776567080631_IMG_0147.jpeg",
+    "school": "Barnard",
+    "major": "political science ",
+    "minor": "ancient studies",
     "bio": null,
-    "quote": null,
-    "zodiac": null,
+    "quote": "",
+    "zodiac": "Gemini",
     "status": "active",
-    "sexual_orientation": null,
-    "image_url": null,
+    "sexual_orientation": "",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/caw2236_1776567080631_IMG_0147.jpeg",
     "created_date": null
   },
   {
@@ -1862,7 +1997,7 @@
   {
     "uni": "cba2134",
     "instagram": "@(_cesaralvan)",
-    "photo": "cba2134_1776377659987_IMG_5322.jpeg",
+    "photo": "cba2134_1776549187468_IMG_5555.jpeg",
     "school": "CC",
     "major": "Political Science",
     "minor": "Hispanic Studies",
@@ -1871,7 +2006,7 @@
     "zodiac": "Sagittarius",
     "status": "active",
     "sexual_orientation": "Male",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/cba2134_1776377659987_IMG_5322.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/cba2134_1776549187468_IMG_5555.jpeg",
     "created_date": null
   },
   {
@@ -1952,7 +2087,7 @@
   {
     "uni": "ceb2265",
     "instagram": "elizzabethbackus ",
-    "photo": "ceb2265_1776385324090_IMG_7902.jpeg",
+    "photo": "ceb2265_1776146440963_IMG_0642.jpeg",
     "school": "Barnard",
     "major": "English ",
     "minor": "Film",
@@ -1961,7 +2096,7 @@
     "zodiac": "Leo",
     "status": "active",
     "sexual_orientation": "",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ceb2265_1776385324090_IMG_7902.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ceb2265_1776146440963_IMG_0642.jpeg",
     "created_date": null
   },
   {
@@ -1992,21 +2127,6 @@
     "status": "active",
     "sexual_orientation": "",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/cek2176_1775838533765_IMG_0014.jpeg",
-    "created_date": null
-  },
-  {
-    "uni": "ces2294",
-    "instagram": "carolineeeschleif",
-    "photo": "ces2294_1776316880693_IMG_0156.JPEG",
-    "school": "SEAS",
-    "major": "cheme",
-    "minor": "",
-    "bio": null,
-    "quote": "",
-    "zodiac": "Libra",
-    "status": "active",
-    "sexual_orientation": "straight",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ces2294_1776316880693_IMG_0156.JPEG",
     "created_date": null
   },
   {
@@ -2115,6 +2235,21 @@
     "created_date": null
   },
   {
+    "uni": "ck3288",
+    "instagram": null,
+    "photo": null,
+    "school": null,
+    "major": null,
+    "minor": null,
+    "bio": null,
+    "quote": null,
+    "zodiac": null,
+    "status": "active",
+    "sexual_orientation": null,
+    "image_url": null,
+    "created_date": null
+  },
+  {
     "uni": "cl3903",
     "instagram": "@chrixt1ne",
     "photo": "cl3903_1776130703926_IMG_7987.JPG",
@@ -2192,7 +2327,7 @@
   {
     "uni": "cm4264",
     "instagram": "@cassidycapri",
-    "photo": "cm4264_1776124334640_IMG_1612.jpeg",
+    "photo": "cm4264_1776554470182_IMG_1414.jpeg",
     "school": "GS",
     "major": "Political Science",
     "minor": "",
@@ -2201,22 +2336,22 @@
     "zodiac": "Gemini",
     "status": "active",
     "sexual_orientation": "",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/cm4264_1776124334640_IMG_1612.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/cm4264_1776554470182_IMG_1414.jpeg",
     "created_date": null
   },
   {
     "uni": "cm4532",
     "instagram": "cr3551d4",
-    "photo": "cm4532_1775840120673_IMG_0666.jpeg",
+    "photo": "cm4532_1776632246194_IMG_7823.jpeg",
     "school": "SEAS",
-    "major": "biomedical engineering",
+    "major": "bme",
     "minor": "",
     "bio": null,
     "quote": "",
     "zodiac": "Aquarius",
     "status": "active",
     "sexual_orientation": "bisexual",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/cm4532_1775840120673_IMG_0666.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/cm4532_1776632246194_IMG_7823.jpeg",
     "created_date": null
   },
   {
@@ -2312,7 +2447,7 @@
   {
     "uni": "cn2602",
     "instagram": "montecarlos1127",
-    "photo": "cn2602_1776372157002_IMG_6268 2.jpg",
+    "photo": "cn2602_1776648987578_000016980032.jpg",
     "school": "CC",
     "major": "Biological Sciences",
     "minor": "",
@@ -2321,22 +2456,7 @@
     "zodiac": "Sagittarius",
     "status": "active",
     "sexual_orientation": "Straight",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/cn2602_1776372157002_IMG_6268 2.jpg",
-    "created_date": null
-  },
-  {
-    "uni": "cp3240",
-    "instagram": "Clp114411",
-    "photo": null,
-    "school": "CC",
-    "major": "Anthropology",
-    "minor": "Chemistry",
-    "bio": null,
-    "quote": "I love my bf Xavier Taveras Garcia",
-    "zodiac": "Libra",
-    "status": "active",
-    "sexual_orientation": "Straight",
-    "image_url": null,
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/cn2602_1776648987578_000016980032.jpg",
     "created_date": null
   },
   {
@@ -2460,21 +2580,6 @@
     "created_date": null
   },
   {
-    "uni": "csw2155",
-    "instagram": "Caitlinwexler",
-    "photo": "csw2155_1776391002705_5243D02B-A227-4023-B2BD-DC995425A6BC.JPG",
-    "school": "CC",
-    "major": "Psychology",
-    "minor": "Evolutionary biology",
-    "bio": null,
-    "quote": "",
-    "zodiac": "Cancer",
-    "status": "active",
-    "sexual_orientation": "Straight",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/csw2155_1776391002705_5243D02B-A227-4023-B2BD-DC995425A6BC.JPG",
-    "created_date": null
-  },
-  {
     "uni": "csz2106",
     "instagram": "",
     "photo": null,
@@ -2502,21 +2607,6 @@
     "status": "active",
     "sexual_orientation": "",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/cts2141_1775832603208_IMG_6879.jpeg",
-    "created_date": null
-  },
-  {
-    "uni": "cuo2104",
-    "instagram": "",
-    "photo": "cuo2104_1776393899293_IMG_0585.jpeg",
-    "school": "CC",
-    "major": "Econ & poli sci",
-    "minor": "",
-    "bio": null,
-    "quote": "",
-    "zodiac": "Pisces",
-    "status": "active",
-    "sexual_orientation": "",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/cuo2104_1776393899293_IMG_0585.jpeg",
     "created_date": null
   },
   {
@@ -2550,18 +2640,33 @@
     "created_date": null
   },
   {
-    "uni": "dab2263",
-    "instagram": "",
+    "uni": "cwl2146",
+    "instagram": null,
     "photo": null,
+    "school": null,
+    "major": null,
+    "minor": null,
+    "bio": null,
+    "quote": null,
+    "zodiac": null,
+    "status": "onboarding",
+    "sexual_orientation": null,
+    "image_url": null,
+    "created_date": null
+  },
+  {
+    "uni": "dab2263",
+    "instagram": "Daisyburckin ",
+    "photo": "dab2263_1776577934575_IMG_6329.jpeg",
     "school": "Barnard",
     "major": "Environmental Science, French",
     "minor": "",
     "bio": null,
     "quote": "",
-    "zodiac": "",
+    "zodiac": "Leo",
     "status": "active",
     "sexual_orientation": "",
-    "image_url": null,
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/dab2263_1776577934575_IMG_6329.jpeg",
     "created_date": null
   },
   {
@@ -2697,6 +2802,21 @@
     "status": "active",
     "sexual_orientation": "Straight",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/djc2237_1775979964892_IMG_4188.jpeg",
+    "created_date": null
+  },
+  {
+    "uni": "djs2296",
+    "instagram": "",
+    "photo": null,
+    "school": "",
+    "major": "econ ",
+    "minor": "cs",
+    "bio": null,
+    "quote": "",
+    "zodiac": "Aquarius",
+    "status": "active",
+    "sexual_orientation": "",
+    "image_url": null,
     "created_date": null
   },
   {
@@ -2895,6 +3015,21 @@
     "created_date": null
   },
   {
+    "uni": "dv2486",
+    "instagram": "davyhnal",
+    "photo": "dv2486_1776464664188_IMG_0953.jpeg",
+    "school": "CC",
+    "major": "Fin Econ",
+    "minor": "",
+    "bio": null,
+    "quote": "",
+    "zodiac": "Sagittarius",
+    "status": "active",
+    "sexual_orientation": "",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/dv2486_1776464664188_IMG_0953.jpeg",
+    "created_date": null
+  },
+  {
     "uni": "dws2137",
     "instagram": "",
     "photo": null,
@@ -2956,17 +3091,17 @@
   },
   {
     "uni": "eak2223",
-    "instagram": null,
-    "photo": null,
-    "school": null,
-    "major": null,
-    "minor": null,
+    "instagram": "evankleinhanss",
+    "photo": "eak2223_1776631858680_IMG_0681.png",
+    "school": "CC",
+    "major": "Political Science",
+    "minor": "",
     "bio": null,
-    "quote": null,
-    "zodiac": null,
+    "quote": "",
+    "zodiac": "",
     "status": "active",
-    "sexual_orientation": null,
-    "image_url": null,
+    "sexual_orientation": "Straight ",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/eak2223_1776631858680_IMG_0681.png",
     "created_date": null
   },
   {
@@ -3042,6 +3177,21 @@
     "status": "active",
     "sexual_orientation": "",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ecb2215_1776011514519_IMG_3733.png",
+    "created_date": null
+  },
+  {
+    "uni": "eck2175",
+    "instagram": "eabha_keane",
+    "photo": "eck2175_1776558456093_IMG_6634.jpeg",
+    "school": "GS",
+    "major": "",
+    "minor": "",
+    "bio": null,
+    "quote": "",
+    "zodiac": "",
+    "status": "active",
+    "sexual_orientation": "",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/eck2175_1776558456093_IMG_6634.jpeg",
     "created_date": null
   },
   {
@@ -3286,8 +3436,8 @@
   },
   {
     "uni": "ej2491",
-    "instagram": "enkangjiang",
-    "photo": "ej2491_1776399976087_IMG_0423.jpeg",
+    "instagram": "@enkangjiang",
+    "photo": "ej2491_1776616571131_IMG_0423.jpeg",
     "school": "CC",
     "major": "Biochem",
     "minor": "",
@@ -3296,7 +3446,7 @@
     "zodiac": "",
     "status": "active",
     "sexual_orientation": "Bi",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ej2491_1776399976087_IMG_0423.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ej2491_1776616571131_IMG_0423.jpeg",
     "created_date": null
   },
   {
@@ -3376,11 +3526,11 @@
   },
   {
     "uni": "ek3304",
-    "instagram": "@edenknapp",
+    "instagram": "edenknapp",
     "photo": "ek3304_1775843636434_IMG_0317.jpeg",
     "school": "SEAS",
-    "major": "mechanical engineering",
-    "minor": "aerospace engineering",
+    "major": "meche",
+    "minor": "aerospace eng",
     "bio": null,
     "quote": "",
     "zodiac": "Taurus",
@@ -3392,7 +3542,7 @@
   {
     "uni": "ekc2141",
     "instagram": "_ewan_clarke_",
-    "photo": "ekc2141_1775961624513_IMG_1443.jpeg",
+    "photo": "ekc2141_1776478037805_IMG_0691.jpeg",
     "school": "CC",
     "major": "Sociology ",
     "minor": "",
@@ -3401,13 +3551,13 @@
     "zodiac": "",
     "status": "active",
     "sexual_orientation": "straight",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ekc2141_1775961624513_IMG_1443.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ekc2141_1776478037805_IMG_0691.jpeg",
     "created_date": null
   },
   {
     "uni": "ekh2143",
     "instagram": "",
-    "photo": "ekh2143_1776312894261_IMG_8525.jpeg",
+    "photo": "ekh2143_1776487621480_IMG_8523.jpeg",
     "school": "CC",
     "major": "ES ",
     "minor": "BM",
@@ -3416,7 +3566,7 @@
     "zodiac": "",
     "status": "active",
     "sexual_orientation": "",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ekh2143_1776312894261_IMG_8525.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ekh2143_1776487621480_IMG_8523.jpeg",
     "created_date": null
   },
   {
@@ -3512,7 +3662,7 @@
   {
     "uni": "epp2120",
     "instagram": "eva_panfil",
-    "photo": "epp2120_1776297927205_Screenshot 2026-04-15 at 8.04.59 PM.png",
+    "photo": "epp2120_1776526666682_Screenshot 2026-04-13 at 11.43.03 PM.png",
     "school": "CC",
     "major": "econ-math",
     "minor": "",
@@ -3521,7 +3671,7 @@
     "zodiac": "Libra",
     "status": "active",
     "sexual_orientation": "",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/epp2120_1776297927205_Screenshot 2026-04-15 at 8.04.59 PM.png",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/epp2120_1776526666682_Screenshot 2026-04-13 at 11.43.03 PM.png",
     "created_date": null
   },
   {
@@ -3585,9 +3735,24 @@
     "created_date": null
   },
   {
+    "uni": "esb2200",
+    "instagram": "",
+    "photo": "esb2200_1776644199160_IMG_1730.jpeg",
+    "school": "CC",
+    "major": "Applied Math",
+    "minor": "",
+    "bio": null,
+    "quote": "",
+    "zodiac": "",
+    "status": "active",
+    "sexual_orientation": "",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/esb2200_1776644199160_IMG_1730.jpeg",
+    "created_date": null
+  },
+  {
     "uni": "esb2201",
     "instagram": "Eliasbababarrett",
-    "photo": "esb2201_1776223549715_IMG_4648.jpeg",
+    "photo": "esb2201_1776564013450_IMG_2901.jpeg",
     "school": "",
     "major": "Economics ",
     "minor": "",
@@ -3596,7 +3761,7 @@
     "zodiac": "Capricorn",
     "status": "active",
     "sexual_orientation": "Straight ",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/esb2201_1776223549715_IMG_4648.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/esb2201_1776564013450_IMG_2901.jpeg",
     "created_date": null
   },
   {
@@ -3647,16 +3812,16 @@
   {
     "uni": "ex2134",
     "instagram": "@be.thanx",
-    "photo": "ex2134_1776395176791_IMG-20251011-WA0007~3.jpg",
+    "photo": "ex2134_1776480034065_IMG-20251011-WA0007~3.jpg",
     "school": "SEAS",
-    "major": "bme",
-    "minor": "linguistics",
+    "major": "BME",
+    "minor": "LING",
     "bio": null,
     "quote": "",
     "zodiac": "Virgo",
     "status": "active",
-    "sexual_orientation": "bi",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ex2134_1776395176791_IMG-20251011-WA0007~3.jpg",
+    "sexual_orientation": "BI",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ex2134_1776480034065_IMG-20251011-WA0007~3.jpg",
     "created_date": null
   },
   {
@@ -3835,8 +4000,23 @@
     "quote": "",
     "zodiac": "Sagittarius",
     "status": "active",
-    "sexual_orientation": "",
+    "sexual_orientation": "straight",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/gca2108_1776176416366_DSC01733.jpeg",
+    "created_date": null
+  },
+  {
+    "uni": "gcb2136",
+    "instagram": null,
+    "photo": null,
+    "school": null,
+    "major": null,
+    "minor": null,
+    "bio": null,
+    "quote": null,
+    "zodiac": null,
+    "status": "active",
+    "sexual_orientation": null,
+    "image_url": null,
     "created_date": null
   },
   {
@@ -3870,6 +4050,21 @@
     "created_date": null
   },
   {
+    "uni": "gf2482",
+    "instagram": "gracecflynn ",
+    "photo": "gf2482_1776636885598_IMG_6655.jpeg",
+    "school": "Barnard",
+    "major": "Cognitive Science ",
+    "minor": "",
+    "bio": null,
+    "quote": "",
+    "zodiac": "Cancer",
+    "status": "active",
+    "sexual_orientation": "",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/gf2482_1776636885598_IMG_6655.jpeg",
+    "created_date": null
+  },
+  {
     "uni": "ggs2135",
     "instagram": "gustavosigelmann",
     "photo": "ggs2135_1775919804978_IMG_3347.jpeg",
@@ -3882,21 +4077,6 @@
     "status": "active",
     "sexual_orientation": "Straight",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ggs2135_1775919804978_IMG_3347.jpeg",
-    "created_date": null
-  },
-  {
-    "uni": "gm3076",
-    "instagram": "@gabrielaamendoza",
-    "photo": "gm3076_1776394792049_89AE7B0D-E69F-48D8-B12A-7CB024ADC7E9.jpeg",
-    "school": "CC",
-    "major": "psychology ",
-    "minor": "",
-    "bio": null,
-    "quote": "",
-    "zodiac": "Libra",
-    "status": "active",
-    "sexual_orientation": "straight ",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/gm3076_1776394792049_89AE7B0D-E69F-48D8-B12A-7CB024ADC7E9.jpeg",
     "created_date": null
   },
   {
@@ -4055,7 +4235,7 @@
     "photo": "hcq2101_1776280006471_IMG_2152.jpeg",
     "school": "CC",
     "major": "political science",
-    "minor": "french",
+    "minor": "french & francophone studies",
     "bio": null,
     "quote": "",
     "zodiac": "",
@@ -4096,7 +4276,7 @@
   },
   {
     "uni": "hhz2102",
-    "instagram": "",
+    "instagram": "@helenzheng_",
     "photo": "hhz2102_1776270368371_IMG_8277.jpeg",
     "school": "SEAS",
     "major": "CS",
@@ -4127,7 +4307,7 @@
   {
     "uni": "hs3181",
     "instagram": "@hhelena.sd",
-    "photo": "hs3181_1775961067573_IMG_8407.jpeg",
+    "photo": "hs3181_1776586551667_IMG_3106.png",
     "school": "SEAS",
     "major": "computer science",
     "minor": "",
@@ -4136,7 +4316,7 @@
     "zodiac": "",
     "status": "active",
     "sexual_orientation": "",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/hs3181_1775961067573_IMG_8407.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/hs3181_1776586551667_IMG_3106.png",
     "created_date": null
   },
   {
@@ -4232,7 +4412,7 @@
   {
     "uni": "id2431",
     "instagram": "@hi_its_isra",
-    "photo": "id2431_1776374251898_IMG_8246.png",
+    "photo": "id2431_1776474334733_IMG_8246.png",
     "school": "SEAS",
     "major": "Material Science/CS ",
     "minor": "",
@@ -4241,7 +4421,7 @@
     "zodiac": "Gemini",
     "status": "active",
     "sexual_orientation": "Straight",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/id2431_1776374251898_IMG_8246.png",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/id2431_1776474334733_IMG_8246.png",
     "created_date": null
   },
   {
@@ -4315,7 +4495,7 @@
     "quote": "",
     "zodiac": "",
     "status": "active",
-    "sexual_orientation": "",
+    "sexual_orientation": "straight",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/im2643_1775934400892_IMG_6042.PNG",
     "created_date": null
   },
@@ -4370,12 +4550,12 @@
     "photo": "ipw2107_1775923589173_IMG_7409.JPG",
     "school": "CC",
     "major": "Political Science",
-    "minor": "Film & Media Studies",
+    "minor": "",
     "bio": null,
     "quote": "",
     "zodiac": "Taurus",
     "status": "active",
-    "sexual_orientation": "Straight",
+    "sexual_orientation": "",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ipw2107_1775923589173_IMG_7409.JPG",
     "created_date": null
   },
@@ -4652,16 +4832,16 @@
   {
     "uni": "jdw2219",
     "instagram": "@jjoyce.wang",
-    "photo": "jdw2219_1776403560259_IMG_2831.jpeg",
-    "school": "",
+    "photo": "jdw2219_1776498941144_IMG_2831.jpeg",
+    "school": "Barnard",
     "major": "political science & human rights",
     "minor": "english",
     "bio": null,
     "quote": "titans, go!",
     "zodiac": "Libra",
     "status": "active",
-    "sexual_orientation": "straight",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/jdw2219_1776403560259_IMG_2831.jpeg",
+    "sexual_orientation": "straight ",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/jdw2219_1776498941144_IMG_2831.jpeg",
     "created_date": null
   },
   {
@@ -4757,7 +4937,7 @@
   {
     "uni": "jj3285",
     "instagram": "@jjungxter",
-    "photo": "jj3285_1775797262936_IMG_5627.jpeg",
+    "photo": "jj3285_1776472221500_Roll 35 pics-24.jpeg",
     "school": "CC",
     "major": "physics",
     "minor": "",
@@ -4766,7 +4946,7 @@
     "zodiac": "Leo",
     "status": "active",
     "sexual_orientation": "straight",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/jj3285_1775797262936_IMG_5627.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/jj3285_1776472221500_Roll 35 pics-24.jpeg",
     "created_date": null
   },
   {
@@ -4816,17 +4996,17 @@
   },
   {
     "uni": "jkz2107",
-    "instagram": null,
-    "photo": null,
-    "school": null,
-    "major": null,
-    "minor": null,
+    "instagram": "jhkarenzhang",
+    "photo": "jkz2107_1776551114888_Screenshot 2026-04-18 at 6.24.59 PM.png",
+    "school": "CC",
+    "major": "history, economics",
+    "minor": "",
     "bio": null,
-    "quote": null,
-    "zodiac": null,
+    "quote": "",
+    "zodiac": "",
     "status": "active",
-    "sexual_orientation": null,
-    "image_url": null,
+    "sexual_orientation": "",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/jkz2107_1776551114888_Screenshot 2026-04-18 at 6.24.59 PM.png",
     "created_date": null
   },
   {
@@ -4849,13 +5029,13 @@
     "instagram": "notjoannalin",
     "photo": null,
     "school": "CC",
-    "major": "",
+    "major": "Evolutionary Biology",
     "minor": "",
     "bio": null,
     "quote": "",
     "zodiac": "Pisces",
     "status": "active",
-    "sexual_orientation": "straight",
+    "sexual_orientation": "",
     "image_url": null,
     "created_date": null
   },
@@ -5005,7 +5185,7 @@
     "quote": "",
     "zodiac": "",
     "status": "active",
-    "sexual_orientation": "",
+    "sexual_orientation": "Straight",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/jps2250_1775946737921_Facetune_28-03-2026-14-55-31.jpeg",
     "created_date": null
   },
@@ -5077,7 +5257,7 @@
     "major": "Cognitive Science ",
     "minor": "",
     "bio": null,
-    "quote": "i didn't come this far just to come this far ",
+    "quote": "",
     "zodiac": "Scorpio",
     "status": "active",
     "sexual_orientation": "Gay",
@@ -5132,16 +5312,16 @@
   {
     "uni": "jtj2127",
     "instagram": "@jordynjaffe",
-    "photo": "jtj2127_1775881285711_IMG_1230.png",
+    "photo": "jtj2127_1776562424660_IMG_1742.png",
     "school": "SEAS",
     "major": "Computer Science",
     "minor": "Econ",
     "bio": null,
     "quote": "",
-    "zodiac": "",
+    "zodiac": "Libra",
     "status": "active",
     "sexual_orientation": "Straight",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/jtj2127_1775881285711_IMG_1230.png",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/jtj2127_1776562424660_IMG_1742.png",
     "created_date": null
   },
   {
@@ -5417,16 +5597,16 @@
   {
     "uni": "kf2709",
     "instagram": "katiefalcon_",
-    "photo": "kf2709_1776365760417_IMG_3113.jpeg",
+    "photo": "kf2709_1776615952393_IMG_3113.jpeg",
     "school": "",
     "major": "Neuroscience",
     "minor": "",
     "bio": null,
-    "quote": "Alright alright alrigh",
+    "quote": "Get busy living or get busy dying",
     "zodiac": "Capricorn",
     "status": "active",
     "sexual_orientation": "",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/kf2709_1776365760417_IMG_3113.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/kf2709_1776615952393_IMG_3113.jpeg",
     "created_date": null
   },
   {
@@ -5442,6 +5622,21 @@
     "status": "active",
     "sexual_orientation": "Lesbian ",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/kf2711_1775835281172_IMG_5843.jpeg",
+    "created_date": null
+  },
+  {
+    "uni": "kgl2130",
+    "instagram": "kathrinee.lynn",
+    "photo": "kgl2130_1776639112424_IMG_0367.jpeg",
+    "school": "GS",
+    "major": "computer science",
+    "minor": "",
+    "bio": null,
+    "quote": "",
+    "zodiac": "",
+    "status": "active",
+    "sexual_orientation": "",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/kgl2130_1776639112424_IMG_0367.jpeg",
     "created_date": null
   },
   {
@@ -5505,9 +5700,24 @@
     "created_date": null
   },
   {
+    "uni": "kmg2226",
+    "instagram": "keving.04",
+    "photo": "kmg2226_1776612280712_Lynn_Fu_GradPhoto_04_16_26_CDS-61.jpg",
+    "school": "SEAS",
+    "major": "Computer Science",
+    "minor": "",
+    "bio": null,
+    "quote": "",
+    "zodiac": "",
+    "status": "active",
+    "sexual_orientation": "straight",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/kmg2226_1776612280712_Lynn_Fu_GradPhoto_04_16_26_CDS-61.jpg",
+    "created_date": null
+  },
+  {
     "uni": "kmk2266",
     "instagram": "@kristen_kallok",
-    "photo": "kmk2266_1775956666262_20250703_115207.jpg",
+    "photo": "kmk2266_1776572183646_Screenshot_20260418_224657_Photos.jpg",
     "school": "Barnard",
     "major": "Environmental Science",
     "minor": "",
@@ -5516,7 +5726,7 @@
     "zodiac": "",
     "status": "active",
     "sexual_orientation": "bi",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/kmk2266_1775956666262_20250703_115207.jpg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/kmk2266_1776572183646_Screenshot_20260418_224657_Photos.jpg",
     "created_date": null
   },
   {
@@ -5627,7 +5837,7 @@
   {
     "uni": "ku2201",
     "instagram": "",
-    "photo": "ku2201_1775933185438_IMG_5942.jpeg",
+    "photo": "ku2201_1776563667846_IMG_6188.jpeg",
     "school": "",
     "major": "math+english",
     "minor": "",
@@ -5636,7 +5846,7 @@
     "zodiac": "Scorpio",
     "status": "active",
     "sexual_orientation": "bi",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ku2201_1775933185438_IMG_5942.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ku2201_1776563667846_IMG_6188.jpeg",
     "created_date": null
   },
   {
@@ -5767,7 +5977,7 @@
     "major": "biology (pre-dental)",
     "minor": "business management",
     "bio": null,
-    "quote": "pretend i said something really funny",
+    "quote": "pretend i said something really funny (i’m gonna edit this later, trust)",
     "zodiac": "Libra",
     "status": "active",
     "sexual_orientation": "straight",
@@ -5897,7 +6107,7 @@
   {
     "uni": "lha2126",
     "instagram": "",
-    "photo": null,
+    "photo": "lha2126_1776557380323_IMG_8201.jpeg",
     "school": "CC",
     "major": "Physics ",
     "minor": "Maths",
@@ -5906,7 +6116,7 @@
     "zodiac": "",
     "status": "active",
     "sexual_orientation": "Straight ",
-    "image_url": null,
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/lha2126_1776557380323_IMG_8201.jpeg",
     "created_date": null
   },
   {
@@ -5927,7 +6137,7 @@
   {
     "uni": "lj2574",
     "instagram": "@lara.j0nes",
-    "photo": "lj2574_1775955760383_Screenshot 2026-04-11 at 9.02.24 PM.png",
+    "photo": "lj2574_1776446541364_Screenshot 2026-04-17 at 1.22.08 PM.png",
     "school": "SEAS",
     "major": "Industrial Engineering",
     "minor": "CS, Entrepreneurship",
@@ -5936,22 +6146,7 @@
     "zodiac": "Leo",
     "status": "active",
     "sexual_orientation": "Straight",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/lj2574_1775955760383_Screenshot 2026-04-11 at 9.02.24 PM.png",
-    "created_date": null
-  },
-  {
-    "uni": "ljm2199",
-    "instagram": "@l1ly_mooney",
-    "photo": null,
-    "school": "Barnard",
-    "major": "English & Film Studies",
-    "minor": "Gender Studies",
-    "bio": null,
-    "quote": "",
-    "zodiac": "",
-    "status": "active",
-    "sexual_orientation": "",
-    "image_url": null,
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/lj2574_1776446541364_Screenshot 2026-04-17 at 1.22.08 PM.png",
     "created_date": null
   },
   {
@@ -5973,7 +6168,7 @@
     "uni": "lmb2320",
     "instagram": "@lindseymariebrown",
     "photo": "lmb2320_1775844481974_IMG_1513.jpeg",
-    "school": "CC",
+    "school": "GS",
     "major": "Neuroscience",
     "minor": "",
     "bio": null,
@@ -5987,7 +6182,7 @@
   {
     "uni": "lml2213",
     "instagram": "",
-    "photo": "lml2213_1775840099863_IMG_4623.jpeg",
+    "photo": "lml2213_1776517892870_IMG_1957.jpeg",
     "school": "Barnard",
     "major": "art history",
     "minor": "",
@@ -5995,22 +6190,22 @@
     "quote": "",
     "zodiac": "Cancer",
     "status": "active",
-    "sexual_orientation": "",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/lml2213_1775840099863_IMG_4623.jpeg",
+    "sexual_orientation": "queer",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/lml2213_1776517892870_IMG_1957.jpeg",
     "created_date": null
   },
   {
     "uni": "lno2113",
-    "instagram": "",
+    "instagram": "lindsayorringer ",
     "photo": "lno2113_1776039901485_0240CE4B-B326-49E2-9DA3-013F5D18E5C1.jpeg",
     "school": "CC",
     "major": "psych",
-    "minor": "",
+    "minor": "public health ",
     "bio": null,
     "quote": "",
     "zodiac": "",
     "status": "active",
-    "sexual_orientation": "",
+    "sexual_orientation": "Straight ",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/lno2113_1776039901485_0240CE4B-B326-49E2-9DA3-013F5D18E5C1.jpeg",
     "created_date": null
   },
@@ -6106,17 +6301,17 @@
   },
   {
     "uni": "lt2899",
-    "instagram": null,
-    "photo": "lt2899_1776117217371_IMG_2081.jpeg",
-    "school": null,
-    "major": null,
-    "minor": null,
+    "instagram": "minterjukk",
+    "photo": "lt2899_1776454729270_IMG_2081.jpeg",
+    "school": "CC",
+    "major": "cs",
+    "minor": "",
     "bio": null,
-    "quote": null,
-    "zodiac": null,
+    "quote": "",
+    "zodiac": "Sagittarius",
     "status": "active",
-    "sexual_orientation": null,
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/lt2899_1776117217371_IMG_2081.jpeg",
+    "sexual_orientation": "",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/lt2899_1776454729270_IMG_2081.jpeg",
     "created_date": null
   },
   {
@@ -6356,6 +6551,21 @@
     "zodiac": "Libra",
     "status": "active",
     "sexual_orientation": "",
+    "image_url": null,
+    "created_date": null
+  },
+  {
+    "uni": "mca2204",
+    "instagram": null,
+    "photo": null,
+    "school": null,
+    "major": null,
+    "minor": null,
+    "bio": null,
+    "quote": null,
+    "zodiac": null,
+    "status": "onboarding",
+    "sexual_orientation": null,
     "image_url": null,
     "created_date": null
   },
@@ -6632,7 +6842,7 @@
   {
     "uni": "mld2221",
     "instagram": "@morgandawsonnnn",
-    "photo": "mld2221_1775913431808_E54E1FCB-06B8-4B37-B0BB-1F321296553B.jpeg",
+    "photo": "mld2221_1776649812267_C8EF2E28-3A4E-4EE9-AA79-AE125262A448.jpeg",
     "school": "Barnard",
     "major": "Sociology",
     "minor": "Psychology",
@@ -6641,13 +6851,13 @@
     "zodiac": "Leo",
     "status": "active",
     "sexual_orientation": "Straight",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/mld2221_1775913431808_E54E1FCB-06B8-4B37-B0BB-1F321296553B.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/mld2221_1776649812267_C8EF2E28-3A4E-4EE9-AA79-AE125262A448.jpeg",
     "created_date": null
   },
   {
     "uni": "mlm2372",
     "instagram": "_._madi13_._",
-    "photo": "mlm2372_1776398772032_IMG_6371.jpeg",
+    "photo": "mlm2372_1776490469859_IMG_6371.jpeg",
     "school": "Barnard",
     "major": "mathematical sciences",
     "minor": "",
@@ -6656,7 +6866,7 @@
     "zodiac": "Sagittarius",
     "status": "active",
     "sexual_orientation": "bi",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/mlm2372_1776398772032_IMG_6371.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/mlm2372_1776490469859_IMG_6371.jpeg",
     "created_date": null
   },
   {
@@ -6685,7 +6895,7 @@
     "quote": "“Did you do the readings? There were readings?!!?”",
     "zodiac": "",
     "status": "active",
-    "sexual_orientation": "",
+    "sexual_orientation": "Straight",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/mlz2120_1775907430041_IMG_1427.jpeg",
     "created_date": null
   },
@@ -6765,6 +6975,21 @@
     "created_date": null
   },
   {
+    "uni": "mmg2256",
+    "instagram": "_michael.m.gonzalez",
+    "photo": "mmg2256_1776479419846_IMG_9586.jpeg",
+    "school": "CC",
+    "major": "econ-math",
+    "minor": "",
+    "bio": null,
+    "quote": "",
+    "zodiac": "Pisces",
+    "status": "active",
+    "sexual_orientation": "straight",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/mmg2256_1776479419846_IMG_9586.jpeg",
+    "created_date": null
+  },
+  {
     "uni": "mmg2257",
     "instagram": null,
     "photo": null,
@@ -6782,7 +7007,7 @@
   {
     "uni": "mmj2166",
     "instagram": "minajo_official",
-    "photo": "mmj2166_1776104702780_321A3733-51AA-45B5-87A3-E9D8DF5987CC.jpeg",
+    "photo": "mmj2166_1776634788852_321A3733-51AA-45B5-87A3-E9D8DF5987CC.jpeg",
     "school": "SEAS",
     "major": "CS",
     "minor": "",
@@ -6791,7 +7016,7 @@
     "zodiac": "Aries",
     "status": "active",
     "sexual_orientation": "Straight",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/mmj2166_1776104702780_321A3733-51AA-45B5-87A3-E9D8DF5987CC.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/mmj2166_1776634788852_321A3733-51AA-45B5-87A3-E9D8DF5987CC.jpeg",
     "created_date": null
   },
   {
@@ -6900,6 +7125,21 @@
     "created_date": null
   },
   {
+    "uni": "mrl2204",
+    "instagram": "matilda.lanner",
+    "photo": "mrl2204_1776643418880_IMG_1071.jpeg",
+    "school": "GS",
+    "major": "econ & art history",
+    "minor": "",
+    "bio": null,
+    "quote": "",
+    "zodiac": "Pisces",
+    "status": "active",
+    "sexual_orientation": "",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/mrl2204_1776643418880_IMG_1071.jpeg",
+    "created_date": null
+  },
+  {
     "uni": "mrr2199",
     "instagram": "",
     "photo": "mrr2199_1776278837646_IMG_5799.jpeg",
@@ -6976,17 +7216,32 @@
   },
   {
     "uni": "mtk2148",
-    "instagram": null,
-    "photo": null,
-    "school": null,
-    "major": null,
-    "minor": null,
+    "instagram": "",
+    "photo": "mtk2148_1776621336398_IMG_1755.jpeg",
+    "school": "CC",
+    "major": "",
+    "minor": "",
     "bio": null,
-    "quote": null,
-    "zodiac": null,
+    "quote": "",
+    "zodiac": "",
     "status": "active",
-    "sexual_orientation": null,
-    "image_url": null,
+    "sexual_orientation": "",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/mtk2148_1776621336398_IMG_1755.jpeg",
+    "created_date": null
+  },
+  {
+    "uni": "mtp2164",
+    "instagram": "@M1xh1.444",
+    "photo": "mtp2164_1776634142814_IMG_4824.jpeg",
+    "school": "Barnard",
+    "major": "Architecture ",
+    "minor": "Sustainable design",
+    "bio": null,
+    "quote": "",
+    "zodiac": "Leo",
+    "status": "active",
+    "sexual_orientation": "bi",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/mtp2164_1776634142814_IMG_4824.jpeg",
     "created_date": null
   },
   {
@@ -7013,7 +7268,7 @@
     "minor": "",
     "bio": null,
     "quote": "",
-    "zodiac": "",
+    "zodiac": "Virgo",
     "status": "active",
     "sexual_orientation": "Straight ",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/mv2902_1776055233519_IMG_0056.jpeg",
@@ -7546,7 +7801,7 @@
   },
   {
     "uni": "ocu2101",
-    "instagram": "@olaedoudensi",
+    "instagram": "olaedoudensi",
     "photo": "ocu2101_1776363896558_IMG_4713.jpeg",
     "school": "Barnard",
     "major": "Neuroscience",
@@ -7570,7 +7825,7 @@
     "quote": "",
     "zodiac": "",
     "status": "active",
-    "sexual_orientation": "Straight",
+    "sexual_orientation": "",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/od2266_1775922200611_IMG_1079.jpeg",
     "created_date": null
   },
@@ -7845,6 +8100,21 @@
     "created_date": null
   },
   {
+    "uni": "pra2120",
+    "instagram": "@andersen.park",
+    "photo": "pra2120_1776484934409_IMG_4346.jpeg",
+    "school": "CC",
+    "major": "",
+    "minor": "",
+    "bio": null,
+    "quote": "",
+    "zodiac": "Aquarius",
+    "status": "active",
+    "sexual_orientation": "",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/pra2120_1776484934409_IMG_4346.jpeg",
+    "created_date": null
+  },
+  {
     "uni": "pvv2005",
     "instagram": "patrick.vib",
     "photo": "pvv2005_1776105341419_IMG_3552.jpeg",
@@ -7872,6 +8142,21 @@
     "status": "active",
     "sexual_orientation": "",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/raa2223_1776133767375_Screenshot 2026-04-13 at 10.29.15 PM.png",
+    "created_date": null
+  },
+  {
+    "uni": "rbb2148",
+    "instagram": null,
+    "photo": null,
+    "school": null,
+    "major": null,
+    "minor": null,
+    "bio": null,
+    "quote": null,
+    "zodiac": null,
+    "status": "active",
+    "sexual_orientation": null,
+    "image_url": null,
     "created_date": null
   },
   {
@@ -8056,17 +8341,17 @@
   },
   {
     "uni": "rr3500",
-    "instagram": "",
-    "photo": null,
+    "instagram": "@richardrnn",
+    "photo": "rr3500_1776559897897_IMG_7865.jpeg",
     "school": "CC",
-    "major": "Computational Biology",
+    "major": "comp bio",
     "minor": "",
     "bio": null,
     "quote": "",
     "zodiac": "",
     "status": "active",
     "sexual_orientation": "Straight",
-    "image_url": null,
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/rr3500_1776559897897_IMG_7865.jpeg",
     "created_date": null
   },
   {
@@ -8080,7 +8365,7 @@
     "quote": "",
     "zodiac": "Cancer",
     "status": "active",
-    "sexual_orientation": "bi",
+    "sexual_orientation": "yes",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/rs4340_1775915920336_Screenshot 2026-04-11 at 9.58.07 AM.png",
     "created_date": null
   },
@@ -8190,6 +8475,21 @@
     "created_date": null
   },
   {
+    "uni": "sb4273",
+    "instagram": "sofiyabelovich",
+    "photo": "sb4273_1776648393614_IMG_4403.jpg",
+    "school": "CC",
+    "major": "architecture",
+    "minor": "history",
+    "bio": null,
+    "quote": "",
+    "zodiac": "",
+    "status": "active",
+    "sexual_orientation": "straight",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/sb4273_1776648393614_IMG_4403.jpg",
+    "created_date": null
+  },
+  {
     "uni": "sbs2231",
     "instagram": "@steph.star100i",
     "photo": "sbs2231_1775929782571_IMG_8300.jpeg",
@@ -8222,7 +8522,7 @@
   {
     "uni": "sc5148",
     "instagram": "Saichoudari ",
-    "photo": null,
+    "photo": "sc5148_1776644014047_4260e44a-a820-460e-a826-7d93928cee16.jpeg",
     "school": "",
     "major": "Biochem/South Asian Studies",
     "minor": "",
@@ -8231,7 +8531,7 @@
     "zodiac": "",
     "status": "active",
     "sexual_orientation": "",
-    "image_url": null,
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/sc5148_1776644014047_4260e44a-a820-460e-a826-7d93928cee16.jpeg",
     "created_date": null
   },
   {
@@ -8307,21 +8607,6 @@
     "status": "active",
     "sexual_orientation": "",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/scs2277_1775922269317_IMG_2177.png",
-    "created_date": null
-  },
-  {
-    "uni": "sd3433",
-    "instagram": "sd3433",
-    "photo": "sd3433_1776400636143_14d3d4e1-17ea-4126-a4a9-ecb6b55593b9.jpeg",
-    "school": "CC",
-    "major": "Psychology",
-    "minor": "",
-    "bio": null,
-    "quote": "",
-    "zodiac": "Taurus",
-    "status": "active",
-    "sexual_orientation": "Heterosexual ",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/sd3433_1776400636143_14d3d4e1-17ea-4126-a4a9-ecb6b55593b9.jpeg",
     "created_date": null
   },
   {
@@ -8487,6 +8772,21 @@
     "status": "active",
     "sexual_orientation": "Straight ",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/sih2124_1776190853542_4e162ec6-7cfb-41eb-8e85-a4009da93375.JPG",
+    "created_date": null
+  },
+  {
+    "uni": "sjc2241",
+    "instagram": "tabularharbor5",
+    "photo": null,
+    "school": "SEAS",
+    "major": "Computer Science ",
+    "minor": "Philosophy, Applied Math, Economics",
+    "bio": null,
+    "quote": "",
+    "zodiac": "Aquarius",
+    "status": "active",
+    "sexual_orientation": "Straight",
+    "image_url": null,
     "created_date": null
   },
   {
@@ -8880,6 +9180,21 @@
     "created_date": null
   },
   {
+    "uni": "sr3985",
+    "instagram": "rina.knows.all",
+    "photo": "sr3985_1776510428359_IMG_6654.jpeg",
+    "school": "Barnard",
+    "major": "Psychology ",
+    "minor": "Sociology",
+    "bio": null,
+    "quote": "",
+    "zodiac": "Aquarius",
+    "status": "active",
+    "sexual_orientation": "",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/sr3985_1776510428359_IMG_6654.jpeg",
+    "created_date": null
+  },
+  {
     "uni": "srm2233",
     "instagram": "samrmcintire",
     "photo": "srm2233_1776014634550_IMG_3590.jpeg",
@@ -8920,20 +9235,20 @@
     "quote": "",
     "zodiac": "Capricorn",
     "status": "active",
-    "sexual_orientation": "bi",
+    "sexual_orientation": "",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ssb2219_1775934726752_IMG_5170_Original.jpeg",
     "created_date": null
   },
   {
     "uni": "ssk2268",
-    "instagram": "",
+    "instagram": "simonekhan",
     "photo": "ssk2268_1776302092501_P1010329.jpeg",
     "school": "Barnard",
     "major": "economics",
     "minor": "science & public policy",
     "bio": null,
     "quote": "",
-    "zodiac": "",
+    "zodiac": "Leo",
     "status": "active",
     "sexual_orientation": "",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ssk2268_1776302092501_P1010329.jpeg",
@@ -8941,17 +9256,17 @@
   },
   {
     "uni": "ssl2193",
-    "instagram": "",
-    "photo": "ssl2193_1775865184928_0AECB1B0-071D-47E6-A59E-004AC6AE1EE3_1_105_c.jpeg",
+    "instagram": "sophiaaslee",
+    "photo": "ssl2193_1776645410794_IMG_5801.jpeg",
     "school": "Barnard",
     "major": "art history and American studies",
     "minor": "",
     "bio": null,
     "quote": "",
-    "zodiac": "",
+    "zodiac": "Cancer",
     "status": "active",
     "sexual_orientation": "",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ssl2193_1775865184928_0AECB1B0-071D-47E6-A59E-004AC6AE1EE3_1_105_c.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/ssl2193_1776645410794_IMG_5801.jpeg",
     "created_date": null
   },
   {
@@ -8986,17 +9301,17 @@
   },
   {
     "uni": "stl2150",
-    "instagram": null,
-    "photo": null,
-    "school": null,
-    "major": null,
-    "minor": null,
+    "instagram": "sameehuhh",
+    "photo": "stl2150_1776633797227_IMG_0704.jpeg",
+    "school": "Barnard",
+    "major": "CS",
+    "minor": "Anthropology",
     "bio": null,
-    "quote": null,
-    "zodiac": null,
+    "quote": "as above so below ",
+    "zodiac": "Sagittarius",
     "status": "active",
-    "sexual_orientation": null,
-    "image_url": null,
+    "sexual_orientation": "",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/stl2150_1776633797227_IMG_0704.jpeg",
     "created_date": null
   },
   {
@@ -9027,6 +9342,21 @@
     "status": "active",
     "sexual_orientation": "",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/stp2130_1775862638012_D3E35A7F-0DCB-4728-81E3-A824DFE77C27.jpeg",
+    "created_date": null
+  },
+  {
+    "uni": "stv2114",
+    "instagram": "Vance.shea",
+    "photo": "stv2114_1776642328112_000011910006.jpeg",
+    "school": "Barnard",
+    "major": "",
+    "minor": "",
+    "bio": null,
+    "quote": "",
+    "zodiac": "",
+    "status": "active",
+    "sexual_orientation": "",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/stv2114_1776642328112_000011910006.jpeg",
     "created_date": null
   },
   {
@@ -9177,6 +9507,21 @@
     "status": "active",
     "sexual_orientation": "Straight",
     "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/sz3120_1775831733033_IMG_1065.jpeg",
+    "created_date": null
+  },
+  {
+    "uni": "tag2172",
+    "instagram": "talya.allison ",
+    "photo": "tag2172_1776557946017_IMG_1335.jpeg",
+    "school": "SEAS",
+    "major": "environmental engineering",
+    "minor": "",
+    "bio": null,
+    "quote": "",
+    "zodiac": "",
+    "status": "active",
+    "sexual_orientation": "",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/tag2172_1776557946017_IMG_1335.jpeg",
     "created_date": null
   },
   {
@@ -9391,7 +9736,7 @@
   },
   {
     "uni": "tmo2121",
-    "instagram": "@taniomoyeni",
+    "instagram": "@taniomoyeni_",
     "photo": "tmo2121_1775960464985_IMG_1982.HEIC",
     "school": "SEAS",
     "major": "COMPUTER SCIENCE",
@@ -9542,7 +9887,7 @@
   {
     "uni": "vat2129",
     "instagram": "",
-    "photo": null,
+    "photo": "vat2129_1776474223352_IMG_4603.jpeg",
     "school": "Barnard",
     "major": "math & psych",
     "minor": "",
@@ -9551,13 +9896,13 @@
     "zodiac": "Taurus",
     "status": "active",
     "sexual_orientation": "bi",
-    "image_url": null,
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/vat2129_1776474223352_IMG_4603.jpeg",
     "created_date": null
   },
   {
     "uni": "vb2574",
     "instagram": "viktorbash1",
-    "photo": "vb2574_1775973677047_IMG_9214 (1).jpg",
+    "photo": "vb2574_1776619890150_smaller.jpg",
     "school": "SEAS",
     "major": "Computer Science",
     "minor": "",
@@ -9566,7 +9911,7 @@
     "zodiac": "Sagittarius",
     "status": "active",
     "sexual_orientation": "Straight",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/vb2574_1775973677047_IMG_9214 (1).jpg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/vb2574_1776619890150_smaller.jpg",
     "created_date": null
   },
   {
@@ -9692,7 +10037,7 @@
   {
     "uni": "wz2628",
     "instagram": "",
-    "photo": "wz2628_1776394985107_IMG_1566.jpeg",
+    "photo": "wz2628_1776616459656_IMG_1566.jpeg",
     "school": "CC",
     "major": "Cognitive Science",
     "minor": "",
@@ -9701,7 +10046,7 @@
     "zodiac": "Aquarius",
     "status": "active",
     "sexual_orientation": "Gay",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/wz2628_1776394985107_IMG_1566.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/wz2628_1776616459656_IMG_1566.jpeg",
     "created_date": null
   },
   {
@@ -9717,21 +10062,6 @@
     "status": "active",
     "sexual_orientation": "",
     "image_url": null,
-    "created_date": null
-  },
-  {
-    "uni": "xt2259",
-    "instagram": "@xd.xxavier",
-    "photo": "xt2259_1776391008033_DSC06264.jpeg",
-    "school": "CC",
-    "major": "Neuroscience",
-    "minor": "",
-    "bio": null,
-    "quote": "Amo a Claire Padilla",
-    "zodiac": "Gemini",
-    "status": "active",
-    "sexual_orientation": "Straight",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/xt2259_1776391008033_DSC06264.jpeg",
     "created_date": null
   },
   {
@@ -9780,6 +10110,21 @@
     "created_date": null
   },
   {
+    "uni": "yme2110",
+    "instagram": "yahyaelgawady",
+    "photo": null,
+    "school": "SEAS",
+    "major": "Computer Science",
+    "minor": "Economics",
+    "bio": null,
+    "quote": "",
+    "zodiac": "Aries",
+    "status": "active",
+    "sexual_orientation": "Gay",
+    "image_url": null,
+    "created_date": null
+  },
+  {
     "uni": "yo2351",
     "instagram": "yas.oueijan",
     "photo": "yo2351_1775841696133_IMG_6480.jpeg",
@@ -9814,7 +10159,7 @@
     "instagram": "yoko.tai",
     "photo": "yt2840_1775829622021_IMG_3787.jpeg",
     "school": "CC",
-    "major": "Computer Science-Mathematics",
+    "major": "CS-Math",
     "minor": "Business Management",
     "bio": null,
     "quote": "",
@@ -9902,7 +10247,7 @@
   {
     "uni": "zc2690",
     "instagram": "@rose_gc_cole",
-    "photo": "zc2690_1775860530392_IMG_0993.jpeg",
+    "photo": "zc2690_1776473626632_IMG_0869.jpeg",
     "school": "",
     "major": "Political Science ",
     "minor": "",
@@ -9911,27 +10256,27 @@
     "zodiac": "Virgo",
     "status": "active",
     "sexual_orientation": "",
-    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/zc2690_1775860530392_IMG_0993.jpeg",
+    "image_url": "https://eggsbucket26.s3.us-east-2.amazonaws.com/zc2690_1776473626632_IMG_0869.jpeg",
     "created_date": null
   },
   {
     "uni": "zem2108",
-    "instagram": null,
+    "instagram": "",
     "photo": null,
-    "school": null,
-    "major": null,
-    "minor": null,
+    "school": "CC",
+    "major": "Psychology ",
+    "minor": "",
     "bio": null,
-    "quote": null,
-    "zodiac": null,
+    "quote": "",
+    "zodiac": "",
     "status": "active",
-    "sexual_orientation": null,
+    "sexual_orientation": "Straight ",
     "image_url": null,
     "created_date": null
   },
   {
     "uni": "zfk2107",
-    "instagram": "",
+    "instagram": "@zaryaabkhann",
     "photo": "zfk2107_1775942149975_IMG_1647.jpeg",
     "school": "SEAS",
     "major": "Computer Science ",
