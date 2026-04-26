@@ -57,6 +57,17 @@ fi
 
 cd "$REPO_DIR"
 
+TARGET_BEFORE_MTIME=0
+SCRAPER_BEFORE_MTIME=0
+
+if [[ -f "$TARGET_JSON" ]]; then
+  TARGET_BEFORE_MTIME="$(stat -f %m "$TARGET_JSON")"
+fi
+
+if [[ -f "$SCRAPER_OUTPUT_JSON" ]]; then
+  SCRAPER_BEFORE_MTIME="$(stat -f %m "$SCRAPER_OUTPUT_JSON")"
+fi
+
 OTHER_CHANGES="$(git status --porcelain | grep -vE '^(.. )?profiles\.json$' || true)"
 if [[ -n "$OTHER_CHANGES" ]]; then
   log "Repo has other local changes. Skipping automated update to avoid mixing work."
@@ -66,7 +77,20 @@ fi
 log "Running scraper."
 "$SCRAPER_PYTHON" "$SCRAPER_SCRIPT"
 
-if [[ -f "$SCRAPER_OUTPUT_JSON" ]] && [[ "$SCRAPER_OUTPUT_JSON" != "$TARGET_JSON" ]]; then
+TARGET_AFTER_MTIME=0
+SCRAPER_AFTER_MTIME=0
+
+if [[ -f "$TARGET_JSON" ]]; then
+  TARGET_AFTER_MTIME="$(stat -f %m "$TARGET_JSON")"
+fi
+
+if [[ -f "$SCRAPER_OUTPUT_JSON" ]]; then
+  SCRAPER_AFTER_MTIME="$(stat -f %m "$SCRAPER_OUTPUT_JSON")"
+fi
+
+if (( TARGET_AFTER_MTIME > TARGET_BEFORE_MTIME )); then
+  log "Scraper wrote profiles.json directly into the repo."
+elif (( SCRAPER_AFTER_MTIME > SCRAPER_BEFORE_MTIME )) && [[ -f "$SCRAPER_OUTPUT_JSON" ]] && [[ "$SCRAPER_OUTPUT_JSON" != "$TARGET_JSON" ]]; then
   if cmp -s "$SCRAPER_OUTPUT_JSON" "$TARGET_JSON"; then
     log "profiles.json already up to date. No git changes needed."
     echo "$CURRENT_RUN_MARKER" > "$LAST_RUN_SLOT_FILE"
@@ -76,7 +100,7 @@ if [[ -f "$SCRAPER_OUTPUT_JSON" ]] && [[ "$SCRAPER_OUTPUT_JSON" != "$TARGET_JSON
   log "Copying fresh profiles.json into repo."
   cp "$SCRAPER_OUTPUT_JSON" "$TARGET_JSON"
 elif [[ -f "$TARGET_JSON" ]]; then
-  log "Scraper wrote profiles.json directly into the repo."
+  log "profiles.json exists in the repo, but no newer output was detected from this scraper run."
 else
   log "Could not find scraper output at either $SCRAPER_OUTPUT_JSON or $TARGET_JSON"
   exit 1
